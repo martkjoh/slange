@@ -1,4 +1,4 @@
 *.ini
-.idea
-__pycache__
+.idea/
+__pycache__/
 *.py__jb_tmp__
