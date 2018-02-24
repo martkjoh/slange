@@ -1,0 +1,4 @@
+*.ini
+.idea
+_pycache_
+*.py__jb_tmp__
