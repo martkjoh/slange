@@ -11,7 +11,8 @@ fig = plt.figure()
 ax = Axes3D(fig)
 cut_top = True
 cut_bottom = False
-height = 10
+contour = True
+height = 5
 
 ax.set_xlabel("x")
 ax.set_ylabel("y")
@@ -39,13 +40,13 @@ if cut_bottom:
                 z[a][b] = -height
     z_min = -height
 
-b = 0
 for a in z:
     b = np.append(b, min(a))
-print(min(b))
-print(f(np.sqrt(2), np.sqrt(2)))
 
 ax.set_zlim(z_min, z_max)
-surf = ax.plot_surface(x, y, z, cmap="plasma")
+surf = ax.plot_surface(x, y, z, cmap="viridis")
+if contour:
+    z_min -= 1
+    bottom = ax.contour(x, y, z, zdir='z', cmap="viridis", offset=z_min)
 
 plt.show()
