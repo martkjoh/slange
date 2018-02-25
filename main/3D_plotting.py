@@ -4,7 +4,7 @@ import numpy as np
 
 
 def f(x, y):
-    return np.sqrt(np.maximum(0, 4 - y ** 2 - x ** 2))
+    return np.log((x**2+y**2)**8)
 
 
 fig = plt.figure()
@@ -18,8 +18,8 @@ ax.set_xlabel("x")
 ax.set_ylabel("y")
 ax.set_zlabel("z")
 
-x = np.linspace(-10, 10, 1000)
-y = np.linspace(-10, 10, 1000)
+x = np.linspace(-10, 10, 50)
+y = np.linspace(-10, 10, 50)
 x, y = np.meshgrid(x, y)
 
 z = f(x, y)

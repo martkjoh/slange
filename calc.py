@@ -1,10 +1,8 @@
-from math import *
-from math import log as ln
+import numpy as np
+from numpy import sin, cos, arcsin, arccos, tan, arctan, e, pi
+from numpy import log as ln
 import main.numerikk as num
 
-
-pi = math.pi
-e = math.e
 G = 6.67e-11
 ep_0 = 8.85e-12
 k = 1/4/pi/ep_0

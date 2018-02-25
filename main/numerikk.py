@@ -110,7 +110,8 @@ def double_integral(func, limits, res=1000, plot=True):
 
 
     if plot:
-        res = res//100
+
+        res = res//50
         y_list = np.linspace(limits[0], limits[1], res)
         if c_is_func:
             x_min = limits[2](y_list)
@@ -141,11 +142,12 @@ def double_integral(func, limits, res=1000, plot=True):
         poly.set_alpha(1)
         ax.add_collection3d(poly)
         ax.plot(pts_x, pts_y, color="b")
-
+        print(min(x_min))
         x = np.linspace(min(x_min), max(x_max), res)
         y = np.linspace(max(y_list), min(y_list), res)
         x, y = np.meshgrid(x, y)
         z = func(x, y)
+
         surf = ax.plot_surface(x, y, z, cmap="viridis")
         ax.set_xlabel("x")
         ax.set_ylabel("y")
@@ -191,7 +193,7 @@ def gauss_usikkerhetsforplantning(func, p, usikkerheter):
     return np.sqrt(s)
 
 
-def liner_regresjon(x, y, y_func=lambda x: x):
+def liner_regresjon(x, y, y_func=lambda x: x, values=False):
     N = len(x)
     S_x = np.sum(x)
     S_y = np.sum(y)
@@ -210,24 +212,39 @@ def liner_regresjon(x, y, y_func=lambda x: x):
     Da_1 = np.sqrt(N / (N - 2) * S / delta)
     print("a_0:", a_0, "a_1:", a_1)
     print("Da_0:", Da_0, "Da_1:", Da_1)
-    return a_0, a_1, f, D_y
+    if values:
+        return a_0, a_1, f, D_y, (N, delta, S_x, S_y, S_xx, S_xy)
+    return a_0, a_1, f, D_y,
+
+
+def cartesian_to_polar(x, y):
+    r = np.sqrt(x**2 + y**2)
+    theta = np.arccos(abs(y/x))
+    return r, theta
+
+
+def polar_to_cartesian(r, theta):
+    return r * np.cos(theta), r * np.sin(theta)
 
 
 if __name__ == "__main__":
 
     def doub_int():
         def f(y, x):
+            return - np.log((np.maximum(0, x**2+y**2))**8)
             return np.sqrt(np.maximum(0, 4 - y ** 2 - x ** 2))
-        
-        def c(y):
-            return np.sqrt(2 * y - y**2)
 
         def d(y):
+            return np.sqrt(np.maximum(0,1 - y**2))
+            return np.sqrt(2 * y - y**2)
+
+        def c(y):
+            return - np.sqrt(np.maximum(0,1 - y**2))
             return np.sqrt(4 - y**2)
         # b d
         # S S f(x,y) dx dy
         # a c
-        a, b = 0, 2
+        a, b = -1, 1
         print(double_integral(f, [a, b, c, d]), 1)
-        print(scipy.integrate.dblquad(f, a, b, c, d, epsabs=1.49e-8, epsrel=1.49e-8))
+        #print(scipy.integrate.dblquad(f, a, b, c, d, epsabs=1.49e-8, epsrel=1.49e-8))
     doub_int()
