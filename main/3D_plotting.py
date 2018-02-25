@@ -4,7 +4,7 @@ import numpy as np
 
 
 def f(x, y):
-    return x + y**2
+    return np.sqrt(np.maximum(0, 4 - y ** 2 - x ** 2))
 
 
 fig = plt.figure()

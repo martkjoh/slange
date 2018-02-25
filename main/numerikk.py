@@ -1,5 +1,9 @@
 import numpy as np
 import scipy.integrate
+from matplotlib import pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+from matplotlib.collections import PolyCollection
 
 
 # Eulers metode på en diff ligning på formen dy/dx = f(x, y).
@@ -84,12 +88,13 @@ def simposons_metode_dobbel(f, a, b, c, d, n):
 # limits are [a, b, c, d], of the from [float, float, func/ float, func, float], and the function evaluates an
 # integral of the form (integral from a to b ( integral from c(y)/c to d(y)/d of f(x, y) dx) dy))
 # presis til ca. 3 desimaler
-def double_integral(func, limits, res=1000):
+def double_integral(func, limits, res=1000, plot=True):
     s = 0
     a, b = limits[0], limits[1]
     ys = np.linspace(a, b, res)
     c_is_func = callable(limits[2])
     d_is_func = callable(limits[3])
+    y_list = np.linspace(limits[0], limits[1], res)
     for y in ys:
         if c_is_func:
             c = limits[2](y)
@@ -102,6 +107,51 @@ def double_integral(func, limits, res=1000):
         dA = ((b - a) / res) * ((d - c) / res)
         xs = np.linspace(c, d, res)
         s += np.sum(func(xs, y)) * dA
+
+
+    if plot:
+        res = res//100
+        y_list = np.linspace(limits[0], limits[1], res)
+        if c_is_func:
+            x_min = limits[2](y_list)
+        else:
+            x_min = limits[2] * np.ones(len(y_list))
+        if d_is_func:
+            x_max = limits[3](y_list)
+        else:
+            x_max = np.ones(len(y_list)) * limits[3]
+
+        fig = plt.figure()
+        ax = Axes3D(fig)
+
+        a = np.linspace(x_min[0], x_max[0], res)
+        b = np.linspace(x_max[-1], x_min[-1], res)
+        c = x_min[::-1]
+        d = x_max
+        pts_x = np.append(a, d)
+        pts_x = np.append(pts_x, b)
+        pts_x = np.append(pts_x, c)
+        pts_y = np.append(y_list[0] * np.ones(res), y_list)
+        pts_y = np.append(pts_y, y_list[-1] * np.ones(res))
+        pts_y = np.append(pts_y, y_list[::-1])
+
+        verts = [(list(zip(pts_x, pts_y)))]
+
+        poly = PolyCollection(verts, facecolor="b")
+        poly.set_alpha(1)
+        ax.add_collection3d(poly)
+        ax.plot(pts_x, pts_y, color="b")
+
+        x = np.linspace(min(x_min), max(x_max), res)
+        y = np.linspace(max(y_list), min(y_list), res)
+        x, y = np.meshgrid(x, y)
+        z = func(x, y)
+        surf = ax.plot_surface(x, y, z, cmap="viridis")
+        ax.set_xlabel("x")
+        ax.set_ylabel("y")
+        ax.set_zlabel("z")
+        plt.show()
+
     return s
 
 
