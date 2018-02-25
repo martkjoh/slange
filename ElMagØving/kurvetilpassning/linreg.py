@@ -1,3 +1,4 @@
+# Skrevet av martin johnsrud
 import numpy as np
 
 
