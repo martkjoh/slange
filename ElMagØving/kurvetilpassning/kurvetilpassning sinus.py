@@ -7,30 +7,27 @@ os.chdir("C:/Users/Martin/Google Drive/slange/")
 from main.numerikk import liner_regresjon
 os.chdir("C:/Users/Martin/Google Drive/slange/ElMagØving/kurvetilpassning")
 
-x, y = np.loadtxt("data.dat", unpack=True)
-#x, y = np.loadtxt("sinus.dat", unpack=True)
+theta, y = np.loadtxt("sinus.dat", unpack=True)
 
-# Gjøres kurvetilpasning til en funksjon av a_0 + a_1 * y_func(x)
-
-a_0, a_1, f, D_y = liner_regresjon(np.sin(x), y, y_func=lambda x: x)
+a_0, a_1, f, D_y = liner_regresjon(np.sin(theta), y, y_func=lambda x: np.sin(x))
 
 labels1 = ["$I\,[A]$", "$m\,[g]$", "Vekt som funksjon av strøm", "$I_m$", "$I_t$", "$\Delta m$"]
-labels2 = ["$\theta$", "$F\,[N]$", "Vekt som funksjon av strøm", "$\theta_m$", "$\theata_t$", "$\Delta F$"]
-labels = labels1
+labels2 = ["$\\theta$", "$F\,[N]$", "Vekt som funksjon av strøm", "$\\theta_m$", "$\\theta_t$", "$\Delta F$"]
+labels = labels2
 
-x_kont = np.linspace(min(x), max(x), 1000)
-
+x_kont = np.linspace(min(theta), max(theta), 1000)
+sintheta = (np.sin(theta))
 fig1, ax1 = plt.subplots(1)
 fig2, ax2 = plt.subplots(1)
 
-ax1.plot(x, y, "x", ms=4)
+ax1.plot(theta, y, "x", ms=4)
 ax1.set_xlabel(labels[0])
 ax1.set_ylabel(labels[1])
 ax1.set_title(labels[2])
 ax1.plot(x_kont, f(x_kont), lw=2)
 ax1.legend((labels[3], labels[4]))
 
-ax2.plot(x, D_y, "x")
+ax2.plot(theta, sintheta, "x")
 ax2.set_xlabel(labels[0])
 ax2.set_ylabel(labels[1])
 ax2.set_title(labels[2])
