@@ -7,34 +7,33 @@ os.chdir("C:/Users/Martin/Google Drive/slange/")
 from main.numerikk import liner_regresjon
 os.chdir("C:/Users/Martin/Google Drive/slange/ElMagØving/kurvetilpassning")
 
+plt.style.use("bmh")
+
 x, y = np.loadtxt("data.dat", unpack=True)
-#x, y = np.loadtxt("sinus.dat", unpack=True)
 
-# Gjøres kurvetilpasning til en funksjon av a_0 + a_1 * y_func(x)
+a_0, a_1, f, D_y = liner_regresjon(x, y, y_func=lambda x: x)
 
-a_0, a_1, f, D_y = liner_regresjon(np.sin(x), y, y_func=lambda x: x)
+x_kont = np.linspace(min(x)-5, max(x)*2, 1000)
 
-labels1 = ["$I\,[A]$", "$m\,[g]$", "Vekt som funksjon av strøm", "$I_m$", "$I_t$", "$\Delta m$"]
-labels2 = ["$\theta$", "$F\,[N]$", "Vekt som funksjon av strøm", "$\theta_m$", "$\theata_t$", "$\Delta F$"]
-labels = labels1
-
-x_kont = np.linspace(min(x), max(x), 1000)
+fit = np.polyfit(x, y, deg=5)
+print(fit)
 
 fig1, ax1 = plt.subplots(1)
 fig2, ax2 = plt.subplots(1)
 
 ax1.plot(x, y, "x", ms=4)
-ax1.set_xlabel(labels[0])
-ax1.set_ylabel(labels[1])
-ax1.set_title(labels[2])
+ax1.set_xlabel("$I\,[A]$", fontsize=18)
+ax1.set_ylabel("$m\,[g]$", fontsize=18)
+ax1.set_title("Vekt som funksjon av strøm", fontsize=18)
 ax1.plot(x_kont, f(x_kont), lw=2)
-ax1.legend((labels[3], labels[4]))
+ax1.plot(x_kont, fit[5] + fit[4]*x_kont + x_kont**2 *fit[3] + x_kont**3 *fit[2] + x_kont**4 *fit[1] + x_kont**5 *fit[0], color='red')
+ax1.legend(("$I_{målt}$", "$I_{reg}$"), fontsize=18)
 
-ax2.plot(x, D_y, "x")
-ax2.set_xlabel(labels[0])
-ax2.set_ylabel(labels[1])
-ax2.set_title(labels[2])
-ax2.legend((labels[-1],))
+ax2.plot(x, D_y,)
+ax2.set_xlabel("$I\,[A]$", fontsize=18)
+ax2.set_ylabel("$m\,[g]$", fontsize=18)
+ax2.set_title("Avvik", fontsize=18)
+ax2.legend(("$I_{målt}$", "$I_{reg}$"), fontsize=18)
 
 plt.tight_layout()
 plt.show()
