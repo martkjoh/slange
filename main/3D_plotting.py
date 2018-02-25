@@ -4,12 +4,12 @@ import numpy as np
 
 
 def f(x, y):
-    return (1 - 2 * x * y) / (x**2 + y**2)
+    return x + y**2
 
 
 fig = plt.figure()
 ax = Axes3D(fig)
-cut_top = True
+cut_top = False
 cut_bottom = False
 contour = True
 height = 5
@@ -40,6 +40,7 @@ if cut_bottom:
                 z[a][b] = -height
     z_min = -height
 
+b = 0
 for a in z:
     b = np.append(b, min(a))
 
