@@ -2,7 +2,7 @@
 # Dette scriptet har til hensikt å drive kurvetilpassning å regresjonsanalyse
 import numpy as np
 from matplotlib import pyplot as plt
-from linreg import *
+from ElMagØving.kurvetilpassning.linreg import *
 
 plt.style.use("bmh")
 
@@ -24,7 +24,7 @@ ax1.set_title("Vekt som funksjon av strøm", fontsize=18)
 ax1.plot(x_kont, f(x_kont), lw=2)
 ax1.legend(("$I_{målt}$", "$I_{reg}$"), fontsize=18)
 
-ax2.plot(x, D_y,)
+ax2.plot(x, D_y, "x", color="k")
 ax2.set_xlabel("$I\,[\mathrm{A}]$", fontsize=18)
 ax2.set_ylabel("$m\,[\mathrm{g}]$", fontsize=18)
 ax2.set_title("Avvik", fontsize=18)
