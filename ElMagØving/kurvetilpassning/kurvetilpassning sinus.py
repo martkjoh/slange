@@ -3,22 +3,26 @@
 import numpy as np
 from matplotlib import pyplot as plt
 from linreg import *
+
 plt.style.use("bmh")
-from matplotlib import rc
 
 
 theta, y = np.loadtxt("sinus.dat", unpack=True)
-
-x_kont = np.linspace(min(theta), max(theta), 1000)
 sintheta = (np.sin(theta))
+
+# Utfører regresjonanalyse, og returnerer regresjonskoeffesienter, en funksjon av form y(x) = a_0 + a_1 * sin(theta),
+# og avviket i en vektor D_y
 a_0, a_1, f, D_y = lineær_regresjon(sintheta, y, y_func=lambda x: np.sin(x))
 
+# fig1 viser y som en funksjon av theta, både måleverider og verdier fra regresjonsanalysen
+# fig2 viser y som en funksjon av sin(theta), både måleverdier og verdier fra reg.an.
 fig1, ax1 = plt.subplots(1)
 fig2, ax2 = plt.subplots(1)
 
-
+# 'Kontinuerlig' verider for theta
 theta_fit = np.linspace(min(theta), max(theta))
 sin_theta_fit = f(theta_fit)
+
 ax1.plot(theta, y, "x", ms=10)
 ax1.set_xlabel("$\\theta$", fontsize=18)
 ax1.set_ylabel("$F\,[N]$", fontsize=18)

@@ -1,4 +1,4 @@
-# Skrevet av martin johnsrud
+# Skrevet av Martin Johnsrud, 25/02-2018
 import numpy as np
 
 
@@ -16,8 +16,10 @@ def lineær_regresjon(x, y, y_func=lambda x: x, values=False):
     def f(x):
         return a_0 + a_1 * y_func(x)
 
+    # Avvik fra regresjonsmodellen
     D_y = f(x) - y
-    S = sum(D_y ** 2)
+    S = np.sum(D_y ** 2)
+    # Standaravvik
     Da_0 = np.sqrt(1 / (N - 2) * (S * S_xx) / delta)
     Da_1 = np.sqrt(N / (N - 2) * S / delta)
     print("a_0:", a_0, "a_1:", a_1)

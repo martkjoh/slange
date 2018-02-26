@@ -2,21 +2,18 @@
 # Dette scriptet har til hensikt å drive kurvetilpassning å regresjonsanalyse
 import numpy as np
 from matplotlib import pyplot as plt
-import os
 from linreg import *
-from matplotlib import rc
 
 plt.style.use("bmh")
 
 x, y = np.loadtxt("data.dat", unpack=True)
 
+# avgjør regresjonskoeffisientene, y(x)=a_0 + a_1 * x, samt en vektor D_y, som er avviket delta_y = y_i-f(x_i)
 a_0, a_1, f, D_y = lineær_regresjon(x, y, y_func=lambda x: x)
 
 x_kont = np.linspace(min(x), max(x), 1000)
 
-fit = np.polyfit(x, y, deg=5)
-print(fit)
-
+# fig1 er regresjonsanalysen, mens fig2 viser avviket
 fig1, ax1 = plt.subplots(1)
 fig2, ax2 = plt.subplots(1)
 
