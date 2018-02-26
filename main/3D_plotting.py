@@ -4,22 +4,21 @@ import numpy as np
 
 
 def f(x, y):
-    return np.log((x**2+y**2)**8)
-
+    return 1 / np.sqrt(x**2 + (y - 1/2)**2) - 1 / np.sqrt(x**2 + (y + 1/2)**2)
 
 fig = plt.figure()
 ax = Axes3D(fig)
-cut_top = False
-cut_bottom = False
-contour = True
+cut_top = True
+cut_bottom = True
+contour = False
 height = 5
 
 ax.set_xlabel("x")
 ax.set_ylabel("y")
 ax.set_zlabel("z")
 
-x = np.linspace(-10, 10, 50)
-y = np.linspace(-10, 10, 50)
+x = np.linspace(-2, 2, 1000)
+y = np.linspace(-2, 2, 1000)
 x, y = np.meshgrid(x, y)
 
 z = f(x, y)
@@ -45,7 +44,7 @@ for a in z:
     b = np.append(b, min(a))
 
 ax.set_zlim(z_min, z_max)
-surf = ax.plot_surface(x, y, z, cmap="viridis")
+ax.plot_surface(x, y, z, cmap="viridis")
 if contour:
     z_min -= 1
     bottom = ax.contour(x, y, z, zdir='z', cmap="viridis", offset=z_min)

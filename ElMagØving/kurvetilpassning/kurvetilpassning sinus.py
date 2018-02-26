@@ -2,10 +2,9 @@
 # Dette scriptet har til hensikt å drive kurvetilpassning å regresjonsanalyse
 import numpy as np
 from matplotlib import pyplot as plt
-from linreg import *
+from ElMagØving.kurvetilpassning.linreg import *
 
 plt.style.use("bmh")
-
 
 theta, y = np.loadtxt("sinus.dat", unpack=True)
 sintheta = (np.sin(theta))

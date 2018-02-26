@@ -111,7 +111,7 @@ def double_integral(func, limits, res=1000, plot=True):
 
     if plot:
 
-        res = res//50
+        res = res//20
         y_list = np.linspace(limits[0], limits[1], res)
         if c_is_func:
             x_min = limits[2](y_list)
@@ -231,20 +231,22 @@ if __name__ == "__main__":
 
     def doub_int():
         def f(y, x):
-            return - np.log((np.maximum(0, x**2+y**2))**8)
+            return 4 * x * y / np.sqrt(np.minimum(1e-10, 100 * y**2 + 100 * x**2))
             return np.sqrt(np.maximum(0, 4 - y ** 2 - x ** 2))
 
         def d(y):
-            return np.sqrt(np.maximum(0,1 - y**2))
+            return np.sqrt(np.maximum(0, 3**2 - y**2))
             return np.sqrt(2 * y - y**2)
 
         def c(y):
-            return - np.sqrt(np.maximum(0,1 - y**2))
+            return np.zeros_like(y)
             return np.sqrt(4 - y**2)
         # b d
         # S S f(x,y) dx dy
         # a c
-        a, b = -1, 1
+        a, b = 1e-10, 3
         print(double_integral(f, [a, b, c, d]), 1)
-        #print(scipy.integrate.dblquad(f, a, b, c, d, epsabs=1.49e-8, epsrel=1.49e-8))
+        print(scipy.integrate.dblquad(f, a, b, c, d))
+
+
     doub_int()
