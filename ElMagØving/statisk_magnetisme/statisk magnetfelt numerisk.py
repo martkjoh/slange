@@ -15,7 +15,7 @@ R_lst = (0.07, 0.0712, 0.0712, 0.0712)
 x_kont = np.linspace(-0.2, 0.2, 1000)
 x_0, I, R = x_0_lst[0], I_lst[0], R_lst[0]
 
-data, header = get_data("data_2gfdg.txt")
+data, header = get_data("data/data_2gfdg.txt")
 data = np.insert(data, 1, (data[0] - x_0) / 100, axis=0)
 data = np.insert(data, 4, (data[2] + data[3])/2, axis=0)
 data = np.insert(data, 5, magnetfelt_spole(data[1], R, I), axis=0)
@@ -40,7 +40,7 @@ ax[0].set_xticks([0])
 ax[0].set_yticks([0])
 ax[0].grid(True)
 for i in range(3):
-    ax[0].plot(x_kont, partia_derivative(magnetfelt_spole, (x_kont, R, I), index[i]) * scale[i], style[i], linewidth=2)
+    ax[0].plot(x_kont, partial_derivative(magnetfelt_spole, (x_kont, R, I), index[i]) * scale[i], style[i], linewidth=2)
     ax[0].legend(label)
 
 title = ("a", "b", "c", "d")
@@ -52,7 +52,7 @@ for i in range(0, 4):
     data[7] = abs(data[6] / data[4] * 100)
     ax.append(fig.add_subplot((320 + i + 3)))
     ax[i + 1].set_title(title[i])
-    ax[i + 1].set_ylabel("$B \,\, [gauss]$", fontsize=17)
+    ax[i + 1].set_ylabel("$B \,\, [G]$", fontsize=17)
     if i == 2 or i == 3:
         ax[i + 1].set_xlabel("$x \,\, [m]$", fontsize=17)
     plotting(data[1], data[6], i + 1)

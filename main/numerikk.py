@@ -68,23 +68,6 @@ def simposons_metode(f, a, b, n):
     return S_n
 
 
-def simposons_metode_dobbel(f, a, b, c, d, n):
-    h = (b - a)/n
-    S_n = f(a, c)
-    for i in range(1, n):
-        if i % 2 == 0:
-            def g(x):
-                return f(x, a + i * h)
-            S_n += 2 * f(c, a + i * h) * simposons_metode(g, c, d, n)
-        else:
-            def g(x):
-                return f(x, a + i * h)
-            S_n += 4 * f(c, a + i * h) * simposons_metode(g, c, d, n)
-    S_n += f(b, d)
-    S_n = h/3 * S_n
-    return S_n
-
-
 # limits are [a, b, c, d], of the from [float, float, func/ float, func, float], and the function evaluates an
 # integral of the form (integral from a to b ( integral from c(y)/c to d(y)/d of f(x, y) dx) dy))
 # presis til ca. 3 desimaler
@@ -157,30 +140,7 @@ def double_integral(func, limits, res=1000, plot=True):
     return s
 
 
-def double_integgral_w_simpsons(func, limits, res=1000):
-    s = 0
-    a, b = limits[0], limits[1]
-    ys = np.linspace(a, b, res)
-    c_is_func = callable(limits[2])
-    d_is_func = callable(limits[3])
-    for y in ys:
-        if c_is_func:
-            c = limits[2](y)
-        else:
-            c = limits[2]
-        if d_is_func:
-            d = limits[3](y)
-        else:
-            d = limits[3]
-        def g(z):
-            return func(z, y)
-        dy = ((b - a) / res)
-        a += simposons_metode(g, c, d, res) * dy
-        s += a
-    return s
-
-
-def partia_derivative(func, p, respect_to, res=1e-10):
+def partial_derivative(func, p, respect_to, res=1e-10):
     h = np.zeros(len(p))
     h[respect_to - 1] = res
     return (func(*(p + h)) - func(*p)) / res
@@ -189,7 +149,7 @@ def partia_derivative(func, p, respect_to, res=1e-10):
 def gauss_usikkerhetsforplantning(func, p, usikkerheter):
     s = 0
     for i, val in enumerate(p):
-        s += ((partia_derivative(func, p, i + 1)) * usikkerheter[i])**2
+        s += ((partial_derivative(func, p, i + 1)) * usikkerheter[i])**2
     return np.sqrt(s)
 
 
