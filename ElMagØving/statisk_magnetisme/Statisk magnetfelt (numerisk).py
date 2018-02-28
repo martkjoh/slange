@@ -1,5 +1,5 @@
 from matplotlib import pyplot as plt
-from ElMagØving.statisk_magnetisme.funksjoner3 import *
+from ElMagØving.statisk_magnetisme.funksjoner import *
 from main.numerikk import *
 
 plt.style.use("classic")

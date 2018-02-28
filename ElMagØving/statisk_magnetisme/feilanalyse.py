@@ -1,4 +1,4 @@
-from ElMagØving.statisk_magnetisme.funksjoner2 import *
+from ElMagØving.statisk_magnetisme.Gamle.funksjoner2 import *
 from main.numerikk import *
 plt.style.use("classic")
 
