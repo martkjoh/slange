@@ -9,7 +9,7 @@ plt.style.use("bmh")
 x, y = np.loadtxt("data.dat", unpack=True)
 
 # avgjør regresjonskoeffisientene, y(x)=a_0 + a_1 * x, samt en vektor D_y, som er avviket delta_y = y_i-f(x_i)
-a_0, a_1, f, D_y = lineær_regresjon(x, y, y_func=lambda x: x)
+f, D_y = lineær_regresjon(x, y, y_func=lambda x: x)
 
 x_kont = np.linspace(min(x), max(x), 1000)
 

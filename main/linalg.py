@@ -1,7 +1,8 @@
 import numpy as np
-
-
-def row_deduc(A):
+import random
+import time
+from matplotlib import pyplot as plt
+def row_reduce(A):
 
     i = 0
     while i < len(A): # Goes through the rows of the matrix
@@ -29,16 +30,24 @@ def row_deduc(A):
         #if sum(A[-i-1]):    # We skip all rows with just 0 (hoping it doesn't cancel out)
         for a in range(i + 1, len(A)): # This goes through all the pivots
             for b in range(len(A[0])): # This is to find the pivot
-                if A[-a][b] != 0:
-                    j = b               # Saving the index of the pivot i a variable
+                if A[-a, b] != 0:
+                    j = b - 1              # Saving the index of the pivot i a variable
                     break
-
-                for b in range(a, len(A)):  # This goes trhtough all the numbers above the pivot
-                    print_mat(A)
-                    x = -A[-b - 1][j]       # Sets x = the number above the pivot
-                    for c in range(len(A[0])):  # Goes though all numbers on the row
-                        A[-b-1][c] += x*A[-a][c] # Subs the current pivot row * x from the numbers in the row
+            for b in range(a, len(A)):  # This goes trhtough all the numbers above the pivot
+                x = -A[-b - 1, j]       # Sets x = the number above the pivot
+                for c in range(len(A[0])):  # Goes though all numbers on the row
+                    A[-b-1, c] += x*A[-a, c] # Subs the current pivot row * x from the numbers in the row
     return A
+
+
+def det(A):
+    if np.shape(A) == (1,1):
+        return A
+    else:
+        D = 0
+        for i, k in enumerate(A[0]):
+            D += k * det(np.concatenate(((A[1:][..., 0:i]).T, (A[1:][..., i+1:]).T)).T) * (-1)**i
+        return D
 
 
 def print_mat(A):
@@ -54,18 +63,23 @@ def print_mat(A):
     print(x)
 
 
-def print_alt(A):
+def print_wolframalpha(A):
     x = "["
     for a in A:
         x += "["
         for b in a:
-            x += str("%.3f" % b) + ", "
+            x += str("%.0f" % b) + ", "
         x = x[:-2] + "],\n"
-    x = x[:-2] + "]"
+    x = x[:-2] + "]\n"
     print(x)
 
 
-B = [[[12,7,11,-9,5],
+def generate_random_matrix(m, n, element_range):
+    return np.array([[random.randint(0, element_range) for j in range(n)] for i in range(m)], dtype="float64")
+
+
+B = [
+    [[12,7,11,-9,5],
      [-9,4,-27,9,-3],
      [-6,11,-7,3,-4],
      [4,-6,10,-5,12]],
@@ -95,7 +109,7 @@ B = [[[12,7,11,-9,5],
      [4, -6, 10, -5, 12, -6, 11, -7, 3, -4, 9, -3, -9, 4, -27, 9, -3, 4, -6, 10],
      [12, 7, 11, 9, -3, -9, 4, -27, 9, -3, 4, -6, 10, -9, 5, -6, 11, -7, 3, -4],
      [-9, 4, -27, 9, -3, -9, 4, -27, 9, -3, 4, -6, 10, -5, 12, -6, 11, -7, 3, -4],
-     [-6, 11, -7, 3, -4, -9, 4, -27, 9, -3, 12, 7, 11,9, -3, -9, 4, -27, 9, -3,],
+     [-6, 11, -7, 3, -4, -9, 4, -27, 9, -3, 12, 7, 11,9, -3, -9, 4, -27, 9, -3],
      [4, -6, 10, -5, 12, -9, 4, -27, 9, -3, -3, -9, 4, -27, 9, -3, -5, 12, -6, 11],
      [4, -6, 10, -5, 12, -6, 11, -7, 3, -4, 9, -3, -9, 4, -27, 9, -3, 4, -6, 10],
      [12, 7, 11, 9, -3, -9, 4, -27, 9, -9, 4, -27, 9, -3, 4, -6, 11, -7, 3, -4]],
@@ -112,19 +126,24 @@ B = [[[12,7,11,-9,5],
       [-9, 4, -27, 9, -3, -9, 4, -27, 9, -3, 4, -6, 10, -5, 12, -6, 11, -7, 3, -4],
       [-6, 11, -7, 3, -4, -9, 4, -27, 9, -3, 12, 7, 11, 9, -3, -9, 4, -27, 9, -3, ],
       [4, -6, 10, -5, 12, -9, 4, -27, 9, -3, -3, -9, 4, -27, 9, -3, -5, 12, -6, 11],
-      [12, 7, 11, 9, -3, -9, 4, -27, 9, -9, 4, -27, 9, -3, 4, -6, 11, -7, 3, -4]]]
+      [12, 7, 11, 9, -3, -9, 4, -27, 9, -9, 4, -27, 9, -3, 4, -6, 11, -7, 3, -4]]
+     ]
 
 
 WSW7 = [[1, 0, 3, 0, 0, 0],
         [1, 8, 5, 2, 0, 0],
         [1, 6, 6, 0, 1, 0],
         [3, 7, 7, 1, 2, 0]]
+ns = np.arange(1, 1000, 1)
+fil = open("fil.txt", "w")
+for n in ns:
+    t = time.clock()
+    A = generate_random_matrix(n, n, 10)
+    sd = row_reduce(A)
+    t = time.clock() - t
+    fil.write(str(n) + "\t" + str(t) + "\n")
+    if n % 10 == 0:
+        fil.close()
+        fil = open("fil.txt", "a")
 
-
-#B = np.array([np.array(xi) for xi in B])
-
-#A = B[-1]
-print_mat(WSW7)
-print_alt(WSW7)
-A = row_deduc(WSW7)
-print_mat(WSW7)
+fil.close()

@@ -11,7 +11,7 @@ sintheta = (np.sin(theta))
 
 # Utfører regresjonanalyse, og returnerer regresjonskoeffesienter, en funksjon av form y(x) = a_0 + a_1 * sin(theta),
 # og avviket i en vektor D_y
-a_0, a_1, f, D_y = lineær_regresjon(sintheta, y, y_func=lambda x: np.sin(x))
+f, D_y = lineær_regresjon(theta, y, y_func=lambda x: np.sin(x))
 
 # fig1 viser y som en funksjon av theta, både måleverider og verdier fra regresjonsanalysen
 # fig2 viser y som en funksjon av sin(theta), både måleverdier og verdier fra reg.an.

@@ -4,11 +4,12 @@ import numpy as np
 
 def lineær_regresjon(x, y, y_func=lambda x: x, values=False):
 
-    N = len(x)
-    S_x = np.sum(x)
+    x_norm = y_func(x)
+    N = len(x_norm)
+    S_x = np.sum(x_norm)
     S_y = np.sum(y)
-    S_xx = np.sum(x ** 2)
-    S_xy = np.sum(x * y)
+    S_xx = np.sum(x_norm ** 2)
+    S_xy = np.sum(x_norm * y)
     delta = N * S_xx - S_x ** 2
     a_0 = (S_y * S_xx - S_x * S_xy) / delta
     a_1 = (N * S_xy - S_x * S_y) / delta
@@ -26,5 +27,5 @@ def lineær_regresjon(x, y, y_func=lambda x: x, values=False):
     print("Da_0:", Da_0, "Da_1:", Da_1)
 
     if values:
-        return a_0, a_1, f, D_y, (N, delta, S_x, S_y, S_xx, S_xy)
-    return a_0, a_1, f, D_y
+        return f, D_y, (a_0, a_1, N, delta, S_x, S_y, S_xx, S_xy)
+    return f, D_y
