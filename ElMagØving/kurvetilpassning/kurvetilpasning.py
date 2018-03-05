@@ -6,8 +6,8 @@ from ElMagØving.kurvetilpassning.linreg import *
 
 plt.style.use("bmh")
 
-x, y = np.loadtxt("data.dat", unpack=True)
-
+x, y = np.loadtxt("data kraft sfa lengde.txt", skiprows=1, unpack=True)
+x += 0.0819912
 # avgjør regresjonskoeffisientene, y(x)=a_0 + a_1 * x, samt en vektor D_y, som er avviket delta_y = y_i-f(x_i)
 f, D_y = lineær_regresjon(x, y, y_func=lambda x: x)
 

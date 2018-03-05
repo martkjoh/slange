@@ -7,24 +7,26 @@ import numpy as np
 def main():
 
     def generate(x, y, n):
-        n = n / 20
-        E = 1/((x + 2 - n) ** 2 + (y) ** 2)
-        E += -1/((x - 2 + n) ** 2 + (y) ** 2)
+        E = np.exp(-x**2 - y**2)
 
         for a in range(len(E)):
             for b in range(len(E[a])):
-                if E[a][b] > heigt:
-                    E[a][b] = heigt
-                if E[a][b] < -heigt:
-                    E[a][b] = -heigt
+                if E[a][b] > heigt*n:
+                    E[a][b] = heigt*n
+                if E[a][b] < -heigt*n:
+                    E[a][b] = -heigt*n
         return E
 
     def animate(n):
         ax.cla()
-        ax.set_zlim(-10, 10)
+        #ax.set_zlim(-10, 10)
         ax.set_xlabel("x")
         ax.set_ylabel("y")
         ax.set_zlabel("z")
+        x = np.linspace(-5*n, 5*n, 100)
+        y = np.linspace(-5*n, 5*n, 100)
+        x, y = np.meshgrid(x, y)
+        print(x)
         z = generate(x, y, n)
         surf = ax.plot_surface(x, y, z, cmap="viridis", vmin=-heigt, vmax=heigt)
         if contour:
@@ -38,7 +40,7 @@ def main():
     y = np.linspace(-5, 5, 100)
     x, y = np.meshgrid(x, y)
     contour = False
-    save = True
+    save = False
     heigt = 10
 
     anim = animation.FuncAnimation(fig, animate, interval=1, blit=False, frames=80)
@@ -52,5 +54,4 @@ def main():
     plt.show()
 
 
-with plt.xkcd():
-    main()
+main()

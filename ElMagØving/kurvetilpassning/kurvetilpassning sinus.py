@@ -6,7 +6,8 @@ from ElMagØving.kurvetilpassning.linreg import *
 
 plt.style.use("bmh")
 
-theta, y = np.loadtxt("sinus.dat", unpack=True)
+theta, y = np.loadtxt("data kraft sfa vinkel.txt", skiprows=1, unpack=True)
+theta = theta/180*np.pi + np.pi/2
 sintheta = (np.sin(theta))
 
 # Utfører regresjonanalyse, og returnerer regresjonskoeffesienter, en funksjon av form y(x) = a_0 + a_1 * sin(theta),

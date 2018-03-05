@@ -4,14 +4,15 @@ import numpy as np
 
 
 def f(x, y):
-    return 1 / np.sqrt(x**2 + (y - 1/2)**2) - 1 / np.sqrt(x**2 + (y + 1/2)**2)
+    return np.exp(-x**2 - y**4)
+
 
 fig = plt.figure()
 ax = Axes3D(fig)
 cut_top = True
 cut_bottom = True
 contour = False
-height = 5
+height = 1
 
 ax.set_xlabel("x")
 ax.set_ylabel("y")
@@ -39,12 +40,13 @@ if cut_bottom:
                 z[a][b] = -height
     z_min = -height
 
-b = 0
-for a in z:
-    b = np.append(b, min(a))
+# b = 0
+# for a in z:
+#     b = np.append(b, min(a))
 
 ax.set_zlim(z_min, z_max)
 ax.plot_surface(x, y, z, cmap="viridis")
+
 if contour:
     z_min -= 1
     bottom = ax.contour(x, y, z, zdir='z', cmap="viridis", offset=z_min)

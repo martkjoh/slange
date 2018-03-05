@@ -41,7 +41,7 @@ def row_reduce(A):
 
 
 def det(A):
-    if np.shape(A) == (1,1):
+    if np.shape(A) == (1, 1):
         return A
     else:
         D = 0
@@ -135,15 +135,18 @@ WSW7 = [[1, 0, 3, 0, 0, 0],
         [1, 6, 6, 0, 1, 0],
         [3, 7, 7, 1, 2, 0]]
 ns = np.arange(1, 1000, 1)
-fil = open("fil.txt", "w")
-for n in ns:
-    t = time.clock()
-    A = generate_random_matrix(n, n, 10)
-    sd = row_reduce(A)
-    t = time.clock() - t
-    fil.write(str(n) + "\t" + str(t) + "\n")
-    if n % 10 == 0:
-        fil.close()
-        fil = open("fil.txt", "a")
+#fil = open("fil.txt", "w")
+#for n in ns:
+#    t = time.clock()
+#    A = generate_random_matrix(n, n, 10)
+#    sd = row_reduce(A)
+#    t = time.clock() - t
+#    fil.write(str(n) + "\t" + str(t) + "\n")
+#    if n % 10 == 0:
+#        fil.close()
+#        fil = open("fil.txt", "a")
 
-fil.close()
+#fil.close()
+
+
+print(det(np.array([[3, 7], [5, 9]])))
