@@ -4,7 +4,7 @@ import numpy as np
 
 
 def f(x, y):
-    return np.exp(-x**2 - y**4)
+    return 2 * np.sqrt(x**2 + y**2)
 
 
 fig = plt.figure()
@@ -12,14 +12,14 @@ ax = Axes3D(fig)
 cut_top = True
 cut_bottom = True
 contour = False
-height = 1
+height = 10
 
 ax.set_xlabel("x")
 ax.set_ylabel("y")
 ax.set_zlabel("z")
 
-x = np.linspace(-2, 2, 1000)
-y = np.linspace(-2, 2, 1000)
+x = np.linspace(-10, 10, 1000)
+y = np.linspace(-10, 10, 1000)
 x, y = np.meshgrid(x, y)
 
 z = f(x, y)

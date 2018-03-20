@@ -17,7 +17,7 @@ R = 0.071                # Radius for spolen
 R_s = 0.05              # Radius for solenoiden
 l = 0.4                 # Lengden Av solenoiden
 
-Delta_I = 0.05            # Usikkerhet for de forskjellige verdiene
+Delta_I = 0.00            # Usikkerhet for de forskjellige verdiene
 Delta_R = 0.0005
 Delta_x = 0.0005
 Delta_a = 0.0005
