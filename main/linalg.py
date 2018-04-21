@@ -135,6 +135,7 @@ WSW7 = [[1, 0, 3, 0, 0, 0],
         [1, 6, 6, 0, 1, 0],
         [3, 7, 7, 1, 2, 0]]
 ns = np.arange(1, 1000, 1)
+
 #fil = open("fil.txt", "w")
 #for n in ns:
 #    t = time.clock()

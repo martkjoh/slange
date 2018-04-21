@@ -1,22 +1,35 @@
 import numpy as np
+import numpy.linalg as la
 from matplotlib import pyplot as plt
-from ElMagØving.kurvetilpassning.linreg import *
+import numpy.random as r
+import time
 
-n, t = np.loadtxt("main/fil.txt", unpack=True)
 
-f, D = lineær_regresjon(n, t, lambda x: x**4)
+def det(A):
 
-x = np.linspace(0, len(n), 1000)
-fig, ax = plt.subplots(2, sharex=True)
-ax[0].plot(n, t, ".")
-ax[0].plot(x, f(x))
-plt.xlabel("Størrelsen på $n\\times n$ matrisa")
-plt.ylabel("Tid, [s]")
-ax[1].plot(n, D)
-ax[0].legend(("Tid for å utføre row reduce på en $n \\times n$ matrise", "kurvetilpasning $a_0 + a_1 n^4$"))
-ax[1].legend(("Avvik",))
-ax[0].grid(True)
-ax[1].grid(True)
-# 9925.269708493684
-print(f(600)/60/60)
-plt.show()
+    def proj(v, u):
+        return sum(u * v) / sum(u * u) * u
+
+    def orthogonolize(A, v):
+        if np.shape(A) == (1, len(A[0])):
+            return v - proj(v, A[-1])
+        else:
+            return orthogonolize(A[:-1], v - proj(v, A[-1]))
+
+    for i in range(1, len(A)):
+        A[i] = orthogonolize(A[:i], A[i])
+
+    return np.prod([np.sqrt(sum(u * u)) for u in A])
+
+
+n = 500
+W = r.randint(0, 10, size=(n, n)).astype("float64")
+W = r.rand(n, n)
+t = time.time()
+print(la.det(W))
+t = time.time() - t
+print(t, "\n")
+
+t = time.time()
+print(det(W))
+print(time.time() - t)
