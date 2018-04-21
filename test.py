@@ -1,12 +1,9 @@
 import numpy as np
 import numpy.linalg as la
-from matplotlib import pyplot as plt
-import numpy.random as r
-import time
 
 
 def det(A):
-
+    B = np.zeros_like(A)
     def proj(v, u):
         return sum(u * v) / sum(u * u) * u
 
@@ -17,19 +14,13 @@ def det(A):
             return orthogonolize(A[:-1], v - proj(v, A[-1]))
 
     for i in range(1, len(A)):
-        A[i] = orthogonolize(A[:i], A[i])
+        B[i] = orthogonolize(A[:i], A[i])
 
     return np.prod([np.sqrt(sum(u * u)) for u in A])
 
+n = 100
+A = 0
+A = np.random.randint(0, 10, size=(n, n)).astype("float64")
 
-n = 500
-W = r.randint(0, 10, size=(n, n)).astype("float64")
-W = r.rand(n, n)
-t = time.time()
-print(la.det(W))
-t = time.time() - t
-print(t, "\n")
-
-t = time.time()
-print(det(W))
-print(time.time() - t)
+print(la.det(A))
+print(det(A))
