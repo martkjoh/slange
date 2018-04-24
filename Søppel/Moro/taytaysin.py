@@ -1,7 +1,6 @@
 from matplotlib import pyplot as plt
 from matplotlib import animation
 from matplotlib import style
-from ffmpy import FFmpeg
 from math import sin, factorial, pi
 
 with plt.xkcd(1, 0.2, 1.2):

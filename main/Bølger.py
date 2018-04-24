@@ -1,10 +1,11 @@
 from matplotlib import pyplot as plt
 from matplotlib import animation
-from math import sin, pi
+from math import sin, cos, pi
 
 
 # Animerer dataen
 def main():
+
     # Liste med alle labels
     labels = ["$y_1 = \sin(k_1x - \\omega_1t + \\phi_1)$",
               "$y_2 = \sin(k_1x - \\omega_1t + \\phi_1)$",
@@ -22,13 +23,13 @@ def main():
     plt.ylim(-2, 2)
 
     # Permanente lister
-    c = 5
+    c = 20
 
     λ_1 = 0.11 * pi
     k_1 = 1 * pi / λ_1
-    ω_1 = c * k_1
+    ω_1 = 10 * k_1
     φ_1 = 0
-    dir_1 = 1       # 0 => høyre, 1 => venstre
+    dir_1 = 0       # 0 => høyre, 1 => venstre
 
     λ_2 = 0.1 * pi
     k_2 = 1 * pi / λ_2
@@ -39,8 +40,8 @@ def main():
     dt = 0.1
     intervall = 1/dt
 
-    Δk = k_1 - k_2
-    Δω = ω_1 - ω_2
+    Δk = -(k_1 - k_2)
+    Δω = -(ω_1 - ω_2)
 
     print("v1 = ", ω_1 / k_1)
     print("v2 = ", ω_2 / k_2)
@@ -55,7 +56,7 @@ def main():
         y1_var = [sin((-1)**dir_1*k_1*x - ω_1*t + φ_1) for x in x1_var]
         y2_var = [sin((-1)**dir_2*k_2*x - ω_2*t + φ_2) for x in x1_var]
         y3_var = [y + y2_var[i] for i, y in enumerate(y1_var)]
-        y4_var = [2*sin(Δk/2*x - Δω/2*t + 1/2*pi) for x in x1_var]
+        y4_var = [2*cos(Δk/2*x - Δω/2*t) for x in x1_var]
 
         lines[0].set_data(x1_var, y1_var)
         lines[1].set_data(x1_var, y2_var)

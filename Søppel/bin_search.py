@@ -13,5 +13,5 @@ def bin_search(lst, value, min, max):
 
 lst = [1, 2, 3, 9, 11, 13, 17, 25, 57, 90]
 
-i = bin_search(lst, 10, 0, len(lst))
+i = bin_search(lst, 13, 0, len(lst))
 print(i)

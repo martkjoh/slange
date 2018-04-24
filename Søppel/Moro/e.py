@@ -1,9 +1,11 @@
 import random as r
 
-a = [0 for x in range(100000)]
-for b in range(100000):
+n = 1000000
+m = 100
+a = 0
+for b in range(n):
     c = 0
-    while c < 1000:
-        c += r.uniform(0, 1000)
-        a[b] += 1
-print(sum(a)/(len(a)))
+    while c < m:
+        c += r.uniform(0, m)
+        a += 1
+print(a/n)
