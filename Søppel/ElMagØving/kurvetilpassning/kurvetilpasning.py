@@ -2,12 +2,12 @@
 # Dette scriptet har til hensikt å drive kurvetilpassning å regresjonsanalyse
 import numpy as np
 from matplotlib import pyplot as plt
-from ElMagØving.kurvetilpassning.linreg import *
+from Søppel.ElMagØving.kurvetilpassning.linreg import *
 
 plt.style.use("bmh")
 
-x, y = np.loadtxt("data kraft sfa lengde.txt", skiprows=1, unpack=True)
-x += 0.0819912
+x, y = np.loadtxt("data kraft sfa strøm.txt", skiprows=1, unpack=True)
+#x += 0.0819912
 # avgjør regresjonskoeffisientene, y(x)=a_0 + a_1 * x, samt en vektor D_y, som er avviket delta_y = y_i-f(x_i)
 f, D_y = lineær_regresjon(x, y, y_func=lambda x: x)
 
