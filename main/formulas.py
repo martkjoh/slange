@@ -1,4 +1,4 @@
-from calc import *
+from Søppel.calc import *
 
 
 def newtonian_gravity(m_1, m_2, r):

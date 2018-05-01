@@ -5,8 +5,7 @@ from Søppel.ElMagØving.kurvetilpassning.linreg import *
 
 def get_data():
 
-    x_dag, x_tid, y = np.loadtxt("C:\\Users\\Martin\\Google Drive\\Mat og drikke\\--navn kommer--v.2\\"
-                                "plupp pr sek.tsv", comments="#", unpack=True, dtype=str, delimiter=",")
+    x_dag, x_tid, y = np.loadtxt("C:\\Users\\Martin\\Google Drive\\Mat og drikke\\--navn kommer--v.2\\plupp pr sek.tsv", comments="#", unpack=True, dtype=str, delimiter=",")
 
     y = np.array(y, dtype="float32")
     x_dag = np.array(x_dag, dtype="float32")
@@ -20,7 +19,7 @@ def get_data():
 
 a, b = get_data()
 
-g = lambda t: np.sin(t)
+g = lambda t: t
 
 A = g(np.concatenate([[a], [np.ones_like(a)]], axis=0).T)
 b = np.array(b).T
@@ -31,4 +30,3 @@ f = lambda t: x[1] + x[0] * g(t)
 plt.plot(a, b, "X")
 plt.plot(np.linspace(a[0], a[-1], 100), f(np.linspace(a[0], a[-1], 100)))
 plt.show()
-

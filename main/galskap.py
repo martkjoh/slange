@@ -7,7 +7,7 @@ import numpy as np
 def main():
 
     def generate(x, y, n):
-        E = np.exp(-x**2 - y**2)
+        E = np.exp(np.sin(x + n) + np.cos(y - n)) + np.exp(np.sin(x + n) + np.cos(y + n))
 
         for a in range(len(E)):
             for b in range(len(E[a])):
@@ -18,15 +18,15 @@ def main():
         return E
 
     def animate(n):
+        n = n/10
         ax.cla()
-        #ax.set_zlim(-10, 10)
+        ax.set_zlim(0, 15)
         ax.set_xlabel("x")
         ax.set_ylabel("y")
         ax.set_zlabel("z")
-        x = np.linspace(-5*n, 5*n, 100)
-        y = np.linspace(-5*n, 5*n, 100)
+        x = np.linspace(-5, 5, 100)
+        y = np.linspace(-5, 5, 100)
         x, y = np.meshgrid(x, y)
-        print(x)
         z = generate(x, y, n)
         surf = ax.plot_surface(x, y, z, cmap="viridis", vmin=-heigt, vmax=heigt)
         if contour:
@@ -40,7 +40,7 @@ def main():
     y = np.linspace(-5, 5, 100)
     x, y = np.meshgrid(x, y)
     contour = False
-    save = False
+    save = True
     heigt = 10
 
     anim = animation.FuncAnimation(fig, animate, interval=1, blit=False, frames=80)
