@@ -1,11 +1,15 @@
-from matplotlib import pyplot as plt
-import numpy as np
+x = 20
+for i in range(1, 20)[::-1]:
+    if x % i == 0:
+        continue
+    else:
+        for j in range(1, i // 2):
+            if x % j == 0 and i % j == 0:
+                continue
+            else:
+                x *= j
 
-def f(x, y):
-    return 1 / np.sqrt(x**2 + (y - 1/2)**2) - 1 / np.sqrt(x**2 + (y + 1/2)**2)
+print(x)
 
-
-x = np.linspace(-2, 2, 1000)
-fig, ax = plt.subplots(1)
-ax.plot(x, f(0, x))
-plt.show()
+for i in range(1, 21):
+    print(i, x/i)
