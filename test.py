@@ -1,31 +1,50 @@
+from matplotlib import pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
-import matplotlib.pyplot as plt
-import sys
-sys.path.append("C:\\Users\\Martin\\Google Drive\\slange")
-from Søppel.ElMagØving.kurvetilpassning.linreg import *
 
 
-def get_data():
-
-    a, b = np.loadtxt("C:\\Users\\Martin\\Google Drive\\Mat og drikke\\--navn kommer--v.2\\oecshle data.txt", unpack=True, dtype=str)
-    a = np.array([float(x.replace(",", ".")) for x in a])
-    b = np.array([float(x.replace(",", ".")) for x in b])
-
-    return a, b 
+def f(x, y):
+    return 2 * np.sqrt(x**2 + y**2)
 
 
-a, b = get_data()
+fig = plt.figure()
+ax = Axes3D(fig)
+cut_top = True
+cut_bottom = True
+contour = False
+height = 10
 
-g = lambda t: t
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
 
-A = g(np.concatenate([[a], [np.ones_like(a)]], axis=0).T)
-b = np.array(b).T
-x = np.dot(np.linalg.inv(np.dot(A.T, A)), np.dot(A.T, b))
+x = np.linspace(-10, 10, 1000)
+y = np.linspace(-10, 10, 1000)
+x, y = np.meshgrid(x, y)
 
-f = lambda t: x[1] + x[0] * g(t)
+z = f(x, y)
 
-print(x[1], x[0])
+z_min, z_max = min([min(x) for x in z]),  max([max(x) for x in z])
 
-plt.plot(a, b, "X")
-plt.plot(np.linspace(a[0], a[-1], 100), f(np.linspace(a[0], a[-1], 100)))
+if cut_top:
+    for a in range(len(z)):
+        for b in range(len(z[a])):
+            if z[a][b] > height:
+                z[a][b] = height
+    z_max = height
+
+if cut_bottom:
+    for a in range(len(z)):
+        for b in range(len(z[a])):
+            if z[a][b] < -height:
+                z[a][b] = -height
+    z_min = -height
+
+ax.set_zlim(z_min, z_max)
+ax.plot_surface(x, y, z, cmap="viridis")
+
+if contour:
+    z_min -= 1
+    bottom = ax.contour(x, y, z, zdir='z', cmap="viridis", offset=z_min)
+
 plt.show()

@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/main/parametric curve.py" line="0" mnemonic="8" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a086eb78-e19c-4a01-9394-7ee5ea597b7f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaTeX/LaTeX.code-workspace" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaTeX/test.aux" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaTeX/test.fdb_latexmk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaTeX/test.fls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaTeX/test.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaTeX/test.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaTeX/test.synctex (1).gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaTeX/test.synctex.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaTeX/test.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/mymovie.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oechsle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slange.code-workspace" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/slange$Eksamen_for_loop.coverage" NAME="Eksamen for loop Coverage Results" MODIFIED="1510757875049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Crash course" />
+    <SUITE FILE_PATH="coverage/slange$Statisk_magnetfelt__numerisk_.coverage" NAME="Statisk magnetfelt (numerisk) Coverage Results" MODIFIED="1520366324694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving/statisk_magnetisme" />
+    <SUITE FILE_PATH="coverage/slange$c_.coverage" NAME="c) Coverage Results" MODIFIED="1510442936451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../NTNU/ITGK/Øvinger/Øving 9/Opptaksgrenser" />
+    <SUITE FILE_PATH="coverage/slange$musikk.coverage" NAME="musikk Coverage Results" MODIFIED="1519164619779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/slange$numerikk.coverage" NAME="numerikk Coverage Results" MODIFIED="1519654525609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/slange$test_pyp.coverage" NAME="test pyp Coverage Results" MODIFIED="1513691401798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$Statisk_magnetfelt__1_.coverage" NAME="Statisk magnetfelt (1) Coverage Results" MODIFIED="1518450551244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving/statisk_magnetisme" />
+    <SUITE FILE_PATH="coverage/slange$e_felt.coverage" NAME="e-felt Coverage Results" MODIFIED="1518175775210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$lab8.coverage" NAME="lab8 Coverage Results" MODIFIED="1523977773355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Kjemi" />
+    <SUITE FILE_PATH="coverage/slange$lg.coverage" NAME="lg Coverage Results" MODIFIED="1510756301314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$Blank.coverage" NAME="Blank Coverage Results" MODIFIED="1519657606911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/source_codes$Stående_bølger.coverage" NAME="Stående bølger Coverage Results" MODIFIED="1509762128374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$galskap__1_.coverage" NAME="galskap (1) Coverage Results" MODIFIED="1517709738410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/slange$linalg__1_.coverage" NAME="linalg (1) Coverage Results" MODIFIED="1517777576114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$Tegning.coverage" NAME="Tegning Coverage Results" MODIFIED="1519082700506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Søppel" />
+    <SUITE FILE_PATH="coverage/slange$eksamensoppgaver.coverage" NAME="eksamensoppgaver Coverage Results" MODIFIED="1510767626292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Crash course" />
+    <SUITE FILE_PATH="coverage/slange$galskap.coverage" NAME="galskap Coverage Results" MODIFIED="1520000402684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/slange$test.coverage" NAME="test Coverage Results" MODIFIED="1528796143414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$kurvetilpasning__1_.coverage" NAME="kurvetilpasning (1) Coverage Results" MODIFIED="1524691795623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Søppel/ElMagØving/kurvetilpassning" />
+    <SUITE FILE_PATH="coverage/slange$calc.coverage" NAME="calc Coverage Results" MODIFIED="1519593809262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$Statisk_magnetfelt_bedre.coverage" NAME="Statisk magnetfelt bedre Coverage Results" MODIFIED="1519766194649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving/statisk_magnetisme" />
+    <SUITE FILE_PATH="coverage/moro$sadfasd.coverage" NAME="sadfasd Coverage Results" MODIFIED="1509299314515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$test_import.coverage" NAME="test import Coverage Results" MODIFIED="1510746828274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$funksjoner2.coverage" NAME="funksjoner2 Coverage Results" MODIFIED="1518549609037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$parametric_curve.coverage" NAME="parametric curve Coverage Results" MODIFIED="1521457150723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/slange$statisk_magnetfelt_numerisk.coverage" NAME="statisk magnetfelt numerisk Coverage Results" MODIFIED="1519766268612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving/statisk_magnetisme" />
+    <SUITE FILE_PATH="coverage/moro$euler.coverage" NAME="euler Coverage Results" MODIFIED="1509299418190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$Statisk_magnetfelt.coverage" NAME="Statisk magnetfelt Coverage Results" MODIFIED="1519763390192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving/statisk_magnetisme" />
+    <SUITE FILE_PATH="coverage/slange$kurvetilpasning.coverage" NAME="kurvetilpasning Coverage Results" MODIFIED="1521557962204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving/kurvetilpassning" />
+    <SUITE FILE_PATH="coverage/slange$3D_plotting.coverage" NAME="3D_plotting Coverage Results" MODIFIED="1520969056324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/slange$lorentzkraft.coverage" NAME="lorentzkraft Coverage Results" MODIFIED="1519082611099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving/Lorentz" />
+    <SUITE FILE_PATH="coverage/slange$Penger.coverage" NAME="Penger Coverage Results" MODIFIED="1517264879932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Penger" />
+    <SUITE FILE_PATH="coverage/moro$asdfas.coverage" NAME="asdfas Coverage Results" MODIFIED="1509299439194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/source_codes$bn.coverage" NAME="bn Coverage Results" MODIFIED="1509760992232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$kolorometri.coverage" NAME="kolorometri Coverage Results" MODIFIED="1521558780483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Kjemi" />
+    <SUITE FILE_PATH="coverage/slange$E_felt.coverage" NAME="E-felt Coverage Results" MODIFIED="1517667261689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$Approval.coverage" NAME="Approval Coverage Results" MODIFIED="1511557834811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Søppel" />
+    <SUITE FILE_PATH="coverage/slange$wsw12.coverage" NAME="wsw12 Coverage Results" MODIFIED="1522850860212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$contour3d_demo3_1.coverage" NAME="contour3d_demo3-1 Coverage Results" MODIFIED="1517666676954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Temp" />
+    <SUITE FILE_PATH="coverage/slange$funksjoner.coverage" NAME="funksjoner Coverage Results" MODIFIED="1518549611881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving/statisk_magnetisme" />
+    <SUITE FILE_PATH="coverage/moro$I_for_pendel.coverage" NAME="I for pendel Coverage Results" MODIFIED="1509299357855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$Sjekk_randint.coverage" NAME="Sjekk randint Coverage Results" MODIFIED="1510759926469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Søppel" />
+    <SUITE FILE_PATH="coverage/slange$Bølger.coverage" NAME="Bølger Coverage Results" MODIFIED="1517584717623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/slange$aaa.coverage" NAME="aaa Coverage Results" MODIFIED="1513205845595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$Stående_bølger.coverage" NAME="Stående bølger Coverage Results" MODIFIED="1513168537976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/source_codes$Animasjon.coverage" NAME="Animasjon Coverage Results" MODIFIED="1509640491322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../NTNU" />
+    <SUITE FILE_PATH="coverage/slange$I_for_pendel.coverage" NAME="I for pendel Coverage Results" MODIFIED="1511558026996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Søppel" />
+    <SUITE FILE_PATH="coverage/slange$Elmag__1_.coverage" NAME="Elmag (1) Coverage Results" MODIFIED="1517580932868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving" />
+    <SUITE FILE_PATH="coverage/slange$feilanalyse.coverage" NAME="feilanalyse Coverage Results" MODIFIED="1520270906959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving" />
+    <SUITE FILE_PATH="coverage/slange$linreg.coverage" NAME="linreg Coverage Results" MODIFIED="1520269399387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving/kurvetilpassning" />
+    <SUITE FILE_PATH="coverage/slange$bin_search.coverage" NAME="bin_search Coverage Results" MODIFIED="1510746477953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$Elmag.coverage" NAME="Elmag Coverage Results" MODIFIED="1517255303981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$kurvetilpassning_sinus.coverage" NAME="kurvetilpassning sinus Coverage Results" MODIFIED="1520273760988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ElMagØving/kurvetilpassning" />
+    <SUITE FILE_PATH="coverage/moro$Hahua.coverage" NAME="Hahua Coverage Results" MODIFIED="1509299369858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$Box_office_mojo_crawl.coverage" NAME="Box office mojo crawl Coverage Results" MODIFIED="1515329228308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$trisurf3d_demo.coverage" NAME="trisurf3d_demo Coverage Results" MODIFIED="1519563645872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Temp" />
+    <SUITE FILE_PATH="coverage/slange$Eulers_metode.coverage" NAME="Eulers metode Coverage Results" MODIFIED="1510568539052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/source_codes$Rakett__1_.coverage" NAME="Rakett (1) Coverage Results" MODIFIED="1509442518569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Oppgaver" />
+    <SUITE FILE_PATH="coverage/slange$linalg.coverage" NAME="linalg Coverage Results" MODIFIED="1519979506463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/slange$Funksjon_2.coverage" NAME="Funksjon 2 Coverage Results" MODIFIED="1510758793850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Crash course" />
+    <SUITE FILE_PATH="coverage/slange$_sdf.coverage" NAME="¨sdf Coverage Results" MODIFIED="1510829588155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Forskjellig tull" />
+    <SUITE FILE_PATH="coverage/moro$Rakett.coverage" NAME="Rakett Coverage Results" MODIFIED="1509354778166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/slange$a.coverage" NAME="a Coverage Results" MODIFIED="1510745954569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Animasjonseks.">
+      <favorite_root url="file://$PROJECT_DIR$/Stående bølger.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/../NTNU/Animasjon.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plup p min.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Drikke/plup p min.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>retry</find>
+      <find>data</find>
+      <find>\n31\,                 \-11\.38</find>
+      <find>^</find>
+      <find>plt</find>
+      <find>print</find>
+      <find>b</find>
+      <find>reg</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/main/phys/chem-formulas.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/Elmag.py" />
+        <option value="$PROJECT_DIR$/E-felt.py" />
+        <option value="$PROJECT_DIR$/tensor.py" />
+        <option value="$PROJECT_DIR$/linalg.py" />
+        <option value="$PROJECT_DIR$/parametric curve.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/Data.csv" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk magnetisme/data.txt" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk magnetisme/data_3.txt" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk magnetisme/Statisk magnetfelt.py" />
+        <option value="$PROJECT_DIR$/../NTNU/ElMag/Rapport mal.tex" />
+        <option value="$PROJECT_DIR$/galskap.py" />
+        <option value="$PROJECT_DIR$/e-felt.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk_magnetisme/data_4_hele" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk_magnetisme/data_4.txt" />
+        <option value="$PROJECT_DIR$/funksjoner2.py" />
+        <option value="$PROJECT_DIR$/statisk magnetfelt numerisk.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/Lorentz/lorentzkraft.py" />
+        <option value="$PROJECT_DIR$/main/musikk.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/trisurf3d_demo.py" />
+        <option value="$USER_HOME$/Anaconda3/Lib/site-packages/mpl_toolkits/mplot3d/art3d.py" />
+        <option value="$PROJECT_DIR$/File1.txt" />
+        <option value="$PROJECT_DIR$/calc.py" />
+        <option value="$PROJECT_DIR$/Blank.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk_magnetisme/funksjoner.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk_magnetisme/Statisk magnetfelt.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk_magnetisme/funksjoner3.py" />
+        <option value="$PROJECT_DIR$/main/numerikk.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk_magnetisme/data/data_3_2.txt" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk_magnetisme/Statisk magnetfelt bedre.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk_magnetisme/statisk magnetfelt numerisk.py" />
+        <option value="$PROJECT_DIR$/nxn matrise row reduce" />
+        <option value="$PROJECT_DIR$/main/galskap.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/kurvetilpassning/målt data 1.txt" />
+        <option value="$PROJECT_DIR$/ElMagØving/kurvetilpassning/linreg.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/feilanalyse.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/kurvetilpassning/data kraft sfa vinkel.txt" />
+        <option value="$PROJECT_DIR$/ElMagØving/kurvetilpassning/data kraft sfa lengde.txt" />
+        <option value="$PROJECT_DIR$/ElMagØving/kurvetilpassning/data kraft sfa strøm.txt" />
+        <option value="$PROJECT_DIR$/ElMagØving/kurvetilpassning/kurvetilpasning.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/kurvetilpassning/kurvetilpassning sinus.py" />
+        <option value="$PROJECT_DIR$/ElMagØving/statisk_magnetisme/Statisk magnetfelt (numerisk).py" />
+        <option value="$PROJECT_DIR$/main/3D_plotting.py" />
+        <option value="$PROJECT_DIR$/main/parametric curve.py" />
+        <option value="$PROJECT_DIR$/Kjemi/kolorometri.py" />
+        <option value="$PROJECT_DIR$/wsw12.py" />
+        <option value="$PROJECT_DIR$/Kjemi/lab8.py" />
+        <option value="$PROJECT_DIR$/Kjemi/data.txt" />
+        <option value="$PROJECT_DIR$/main/linalg.py" />
+        <option value="$PROJECT_DIR$/Søppel/ElMagØving/kurvetilpassning/kurvetilpasning.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="140" />
+    <option name="width" value="791" />
+    <option name="height" value="775" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyNonAsciiCharInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="slange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="slange" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ToolWindowTerminal.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="moro" sdk-home="C:\Users\Martin\Anaconda3\python.exe">
+        <envs>
+          <env key="DISPLAY" value="True" />
+          <env key="PYTHONBUFFERED" value="1" />
+        </envs>
+        <option name="mySdkHome" value="C:\Users\Martin\Anaconda3\python.exe" />
+        <option name="myModuleName" value="moro" />
+        <option name="myEnvs">
+          <map>
+            <entry key="DISPLAY" value="True" />
+            <entry key="PYTHONBUFFERED" value="1" />
+          </map>
+        </option>
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Martin\Google Drive\slange\moro" />
+      <recent name="C:\Users\Martin\Google Drive\slange" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Martin\Google Drive\slange\moro" />
+      <recent name="C:\Users\Martin\Google Drive\slange\Søppel" />
+      <recent name="C:\Users\Martin\Google Drive\slange\ElMagØving\statisk_magnetisme\Gamle" />
+      <recent name="C:\Users\Martin\Google Drive\slange\ElMagØving\statisk_magnetisme" />
+      <recent name="C:\Users\Martin\Google Drive\slange\ElMagØving\statisk_magnetisme\data" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.test">
+    <configuration name="kolorometri" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="moro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Kjemi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Kjemi/kolorometri.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="kurvetilpasning (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="moro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Søppel/ElMagØving/kurvetilpassning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Søppel/ElMagØving/kurvetilpassning/kurvetilpasning.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="lab8" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="moro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Kjemi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Kjemi/lab8.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="moro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="wsw12" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="moro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Martin\Google Drive\slange\Søppel\wsw12.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.kolorometri" />
+      <item itemvalue="Python.wsw12" />
+      <item itemvalue="Python.lab8" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.kurvetilpasning (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.kurvetilpasning (1)" />
+        <item itemvalue="Python.lab8" />
+        <item itemvalue="Python.wsw12" />
+        <item itemvalue="Python.kolorometri" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="project-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a086eb78-e19c-4a01-9394-7ee5ea597b7f" name="Default" comment="" />
+      <created>1509287997891</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1509287997891</updated>
+    </task>
+    <task id="LOCAL-00001" summary="working">
+      <created>1519557226784</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519557226784</updated>
+    </task>
+    <task id="LOCAL-00002" summary="working">
+      <created>1519584423888</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1519584423888</updated>
+    </task>
+    <task id="LOCAL-00003" summary="work work work work work">
+      <created>1519600601014</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1519600601014</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32973805" />
+      <window_info anchor="bottom" id="Event Log" internal_type="SLIDING" order="7" sideWeight="0.13250366" side_tool="true" type="SLIDING" weight="0.22652757" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32786885" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8674963" weight="0.2735426" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32935917" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20497803" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
+      <window_info anchor="right" auto_hide="true" x="72" y="103" width="1229" height="613" id="SciView" order="5" show_stripe_button="false" type="FLOATING" weight="0.5763994" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.2496329" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39791358" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Data View" order="6" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32935917" />
+      <window_info anchor="right" x="0" y="0" width="124" height="575" id="Documentation" order="3" weight="0.21083455" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="working" />
+    <MESSAGE value="work work work work work" />
+    <option name="LAST_COMMIT_MESSAGE" value="work work work work work" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="46" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ElMagØving/statisk_magnetisme/data_4_hele" />
+    <entry file="file://$PROJECT_DIR$/Søppel/Tegning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6397" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ElMagØving/Elmag.py" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/statisk_magnetisme/Gamle/funksjoner2.py" />
+    <entry file="file://$PROJECT_DIR$/main/musikk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/mpl_toolkits/mplot3d/art3d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-64">
+          <caret line="519" selection-start-line="519" selection-end-line="519" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/trisurf3d_demo.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/spectrum_demo.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/axhspan_demo.py" />
+    <entry file="file://$PROJECT_DIR$/main/Bølger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-617">
+          <caret line="17" column="54" lean-forward="true" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ElMagØving/statisk_magnetisme/data" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/statisk_magnetisme/Gamle/Statisk magnetfelt.py" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/statisk_magnetisme/Gamle/funksjoner.py" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/statisk_magnetisme/data/data_3_2.txt" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/statisk_magnetisme/desktop.ini" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/statisk_magnetisme/feilanalyse.py" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/statisk_magnetisme/funksjoner.py" />
+    <entry file="file://$PROJECT_DIR$/main/.numerikk.py.swp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moro/tensor.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Søppel/hello world.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calc.py" />
+    <entry file="file://$PROJECT_DIR$/Blank.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Søppel/File1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/galskap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ElMagØving/kurvetilpassning/data.dat" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/kurvetilpassning/sinus.dat" />
+    <entry file="file://$PROJECT_DIR$/main/numerikk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="152" column="21" lean-forward="true" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ElMagØving/feilanalyse.py" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/kurvetilpassning/data kraft sfa strøm.txt" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/kurvetilpassning/kurvetilpassning sinus.py" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/kurvetilpassning/data kraft sfa lengde.txt" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/kurvetilpassning/data kraft sfa vinkel.txt" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/kurvetilpassning/linreg.py" />
+    <entry file="file://$PROJECT_DIR$/main/parametric curve.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ElMagØving/statisk_magnetisme/Statisk magnetfelt (numerisk).py" />
+    <entry file="file://$PROJECT_DIR$/main/3D_plotting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kjemi/kolorometri.py" />
+    <entry file="file://$PROJECT_DIR$/Søppel/wsw12.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ElMagØving/Lorentz/lorentzkraft.py" />
+    <entry file="file://$PROJECT_DIR$/Kjemi/lab8.py" />
+    <entry file="file://$PROJECT_DIR$/Kjemi/data.txt" />
+    <entry file="file://$PROJECT_DIR$/ElMagØving/kurvetilpassning/kurvetilpasning.py" />
+    <entry file="file://$PROJECT_DIR$/moro/nxn matrise row reduce">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/fil.txt" />
+    <entry file="file://$PROJECT_DIR$/moro/row reduction time complexity.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/linalg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/numpy/core/function_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Søppel/ElMagØving/kurvetilpassning/kurvetilpasning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Drikke/plup p min.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
