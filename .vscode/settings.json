@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/home/martin/anaconda3/bin/python",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000
+}

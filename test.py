@@ -9,7 +9,7 @@ def f(x, y):
 
 fig = plt.figure()
 ax = Axes3D(fig)
-cut_top = True
+cut_top = False
 cut_bottom = True
 contour = False
 height = 10
