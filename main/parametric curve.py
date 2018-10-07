@@ -25,7 +25,7 @@ def animate(n):
     t = np.linspace(range[0], n, space_res*n)
     xs, ys, zs = generate(t)
     line = ax.plot(xs, ys, zs)
-    ax.legend()
+    #ax.legend()
     return line
 
 
@@ -36,6 +36,6 @@ range = [0, 2 * np.pi]
 speed = 0.05
 space_res = 100
 
-anim = animation.FuncAnimation(fig, animate, interval=1, blit=True, frames=int(range[1]/speed*1.02))
+anim = animation.FuncAnimation(fig, animate, interval=1, blit=False, frames=int(range[1]/speed*1.02))
 
 plt.show()

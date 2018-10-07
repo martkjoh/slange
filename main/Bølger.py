@@ -49,6 +49,7 @@ def main():
     x1_var = [x/k_1 * dt for x in range(int(2*pi*k_1*intervall) + 100)]
 
     def init():
+        print("hei")
         return lines
 
     def animate(n):

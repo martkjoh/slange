@@ -40,7 +40,7 @@ def main():
     y = np.linspace(-5, 5, 100)
     x, y = np.meshgrid(x, y)
     contour = False
-    save = True
+    save = False
     heigt = 10
 
     anim = animation.FuncAnimation(fig, animate, interval=1, blit=False, frames=80)
