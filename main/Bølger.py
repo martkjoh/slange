@@ -12,7 +12,7 @@ def main():
               "$y_1 + y_2$", "modulation wave"]
 
     # Lager en figur, samt akser
-    fig1, (ax1, ax2) = plt.subplots(2, 1, sharex="all", sharey="all")
+    
 
     # Konstruerer en liste med Line2D objekter
     lines = [ax1.plot([], [], label=labels[a])[0] for a in range(2)]
