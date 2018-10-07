@@ -3,13 +3,15 @@ from matplotlib import animation
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 from numpy import pi
+import scipy
+from scipy import integrate
 
 
-
+print("hello world")
 # Animerer dataen
 def main():
 
-    L = 2*pi
+    L = pi
     h = 1
     dt = 0.01
     intervall = 1/dt
@@ -50,6 +52,8 @@ def main():
     def varm_pinne(): # u(0, t) = u(L, t) = 0
 
         def b(n):
+
+            return 2 / L * integrate.quad(f(x) *  np.sin(p(n) * x), 0, L, args=(x))
             if n%2 == 0:
                 return 0
             return h*L/(n**2*pi**2)*(-1)**(n+1)
@@ -71,11 +75,10 @@ def main():
         return u
 
 
+    def isolert_pinne(f, L, c, n): # d_x u(0, t) = d_xu(L, t) = 0, isolert pinne
 
-    def isolert_pinne(): # d_x u(0, t) = d_xu(L, t) = 0, isolert pinne
-
-        def a(n):
-            return h*L/(n**2*pi**2)*(2*np.cos(n*pi/2)-np.cos(n*pi) - 1)
+        def a(n, L):
+            return 2/L integrate(f(x) * np.cos(p(n) * x), 0, L, args(x))
 
         def p(n):
             return n*pi/L
@@ -92,8 +95,14 @@ def main():
 
         return u
 
+    def f(x):
+        if x < 0 or x < L/2
+            return x
+        else:
+            return L - x
 
-    u = isolert_pinne()
+    u = varm_pinne(f, L, c, n)
+
 
     def animate(m):
 
