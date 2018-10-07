@@ -49,7 +49,7 @@ def main():
         return u
 
 
-    def varm_pinne(): # u(0, t) = u(L, t) = 0
+    def varm_pinne(f, L, c, n): # u(0, t) = u(L, t) = 0
 
         def b(n):
 
@@ -78,7 +78,7 @@ def main():
     def isolert_pinne(f, L, c, n): # d_x u(0, t) = d_xu(L, t) = 0, isolert pinne
 
         def a(n, L):
-            return 2/L integrate(f(x) * np.cos(p(n) * x), 0, L, args(x))
+            return 2/L * integrate.quad(f(x) * np.cos(p(n) * x), 0, L, args=(x))
 
         def p(n):
             return n*pi/L
@@ -96,7 +96,7 @@ def main():
         return u
 
     def f(x):
-        if x < 0 or x < L/2
+        if x < 0 or x <= (L/2):
             return x
         else:
             return L - x
