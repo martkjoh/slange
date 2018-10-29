@@ -102,6 +102,7 @@ def main():
         zs = u(xs, t, n)
         ys = np.zeros_like(xs)
         line = ax.plot(xs, zs, color="blue")
+        print(type(line))
         return line
 
     plt.interactive(False)

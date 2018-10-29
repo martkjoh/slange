@@ -41,6 +41,7 @@ def main():
 
 
     def init():
+
         return lines
 
     def animate(m):

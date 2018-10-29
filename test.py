@@ -1,50 +1,39 @@
 from matplotlib import pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import animation
+from math import *
 import numpy as np
 
 
-def f(x, y):
-    return 2 * np.sqrt(x**2 + y**2)
-
-
 fig = plt.figure()
-ax = Axes3D(fig)
-cut_top = False
-cut_bottom = True
-contour = False
-height = 10
+ax = plt.subplot()
 
-ax.set_xlabel("x")
-ax.set_ylabel("y")
-ax.set_zlabel("z")
 
-x = np.linspace(-10, 10, 1000)
-y = np.linspace(-10, 10, 1000)
-x, y = np.meshgrid(x, y)
+def make_blob(n, xrange, yrange, form):
+    x = np.zeros((n, n))
+    for i in range(n):
+        x[i] = np.linspace(xrange[0], xrange[1],  n) # The range of the real values of the plot
 
-z = f(x, y)
+    y = np.zeros((n, n))
+    for i in range(n):
+        y[i] = form(x[i], (i / (n - 1)*2 - 1)*yrange)
 
-z_min, z_max = min([min(x) for x in z]),  max([max(x) for x in z])
+    return x + 1j*y
 
-if cut_top:
-    for a in range(len(z)):
-        for b in range(len(z[a])):
-            if z[a][b] > height:
-                z[a][b] = height
-    z_max = height
+frames = 40
+form = lambda x, i: (1)*(i)
+z1 = make_blob(100, (-2, 2), 2, form)
 
-if cut_bottom:
-    for a in range(len(z)):
-        for b in range(len(z[a])):
-            if z[a][b] < -height:
-                z[a][b] = -height
-    z_min = -height
+def animate(n):
+    ax.cla()
+    t = n * 0.05
+    deg = floor(t) + 1
+    t -= deg
+    z = z1**deg
+    w = z1**(deg + 1)
+    artist = ax.contour(z1.real, z1.imag, w.imag * t + z.imag * (1 - t), np.linspace(-5, 5, 31), colors="blue").collections
+    return artist
 
-ax.set_zlim(z_min, z_max)
-ax.plot_surface(x, y, z, cmap="viridis")
 
-if contour:
-    z_min -= 1
-    bottom = ax.contour(x, y, z, zdir='z', cmap="viridis", offset=z_min)
+anim = animation.FuncAnimation(fig, animate, interval=0.01, frames=frames, blit=True)
 
 plt.show()
