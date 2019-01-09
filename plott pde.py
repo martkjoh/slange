@@ -73,11 +73,12 @@ def main():
 
             return s
 
+
         return u
 
 
     def f(x):
-        return x**3 - L**2*x
+        return x**2 - L*x
 
     L = pi
     xs = np.linspace(0, L, 500)
@@ -102,7 +103,6 @@ def main():
         zs = u(xs, t, n)
         ys = np.zeros_like(xs)
         line = ax.plot(xs, zs, color="blue")
-        print(type(line))
         return line
 
     plt.interactive(False)
