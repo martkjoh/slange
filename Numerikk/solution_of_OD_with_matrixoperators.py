@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from LU_faktorisering import LUFactor, splitLU, backSub, solve
+from iterative_matrix_solver import jacobi
 np.set_printoptions(2)
 
 n = 120

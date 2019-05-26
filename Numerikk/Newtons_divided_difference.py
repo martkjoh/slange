@@ -3,40 +3,55 @@ import matplotlib.pyplot as plt
 
 def f(x):
     return 1 / (1 + 12 * x**2)
+    # return x**2 + x - 1
 
 def NDD(f, x, n):
-
-    # y[x_a ... x_(a + b)] = y[a, b]
+    # L[x_a ... x_(a + b)] = y[a, b]
     y = np.zeros((n, n))
-    y[:,0] = f(xSample)
-
+    y[:,0] = f(x)
     for i in range(1, n + 1):
         for j in range(n - i):
             y[j, i] = (y[j + 1, i - 1] - y[j,  i - 1]) / (x[j + i] - x[j])
 
-    def P(x, n):
-        s = y[0, 0]
-        for i in range(1, n):
-            p = y[0, i]
-            for j in range(i):
-                p *= (x - xSample[j])
-            s += p
-        return s
+    return y[0, :]
 
-    return P
+n = 5
+x = np.linspace(1, n, n)
+L = NDD(f, x, n)
 
-n = 11
-xRange = 1
-xSample = (np.random.rand(n) - 0.5) * 2 * xRange
-xSample = np.linspace(-xRange, xRange, n)
-xSample.sort()
-# xSample = np.linspace(-xRange, xRange, n)
+def P(x0):
+    s = L[0]
+    for i in range(1, n):
+        p = L[i]
+        for j in range(i):
+            p *= (x0 - x[j])
+        s += p
+    return s
 
-P = NDD(f, xSample, n)
+C = np.zeros((n, n))
+C[0, 0] = 1
+for i in range(1, n):
+    C[i, i] = 1
+    C[0, i] = - C[0, i - 1] * x[i]
+    for j in range(1, i - 1):
+        C[j, i] = - C[j, i - 1] * x[i] + C[j - 1, i - 1]
+    print(C)
 
-xKont = np.linspace(-xRange, xRange, 100)
-plt.plot(xSample, f(xSample), "xr")
-plt.plot(xKont, f(xKont))
-plt.plot(xKont, P(xKont, n))
+
+A = C @ L
+X = np.zeros(n)
+print(A)
+print(L)
+
+def G(x0):
+    s = 0
+    for i in range(n):
+        s += A[i] * x0**i
+    return s
+
+xKont = np.linspace(1, n, 100)
+plt.plot(xKont, P(xKont))
+plt.plot(x, f(x), "xr")
+plt.plot(xKont, G(xKont))
 
 plt.show()

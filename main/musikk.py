@@ -15,7 +15,7 @@ scales = {"M": [0, 2, 2, 1, 2, 2, 2, 1],
           "pent": [0, 3, 2, 2, 3, 2]}
 sine = 0
 scale = scales["M"]
-tot = 0
+tot = 1
 graph = 0
 
 
@@ -162,7 +162,7 @@ def sanger(sang):
                [1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 2, 0.51, 4])
 
     elif sang == "baseball":
-        scale = scales["cro"]
+        scale = scales["m"]
         return ([6, 1, 3, 5]*4 + [7, 2, 4, 6]*2 + [8, 3, 5, 7]*2 + [3, 7, 9, 12, 7, [12, 6, 9]],
                 [1, 1, 1, 1]*8 +[1/2, 1/2, 1/2, 1, 1/2, 2])
 
@@ -208,6 +208,7 @@ def find_fqs_from_notes(notes, skala=scale):
         fqs.append(A * halvtone ** antall)
     return fqs
 """
+
 
 if __name__ == "__main__":
     play_melody(*sanger("lisa"))

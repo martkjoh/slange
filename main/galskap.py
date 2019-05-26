@@ -46,8 +46,9 @@ def main():
     anim = animation.FuncAnimation(fig, animate, interval=1, blit=False, frames=80)
 
     if save:
-        plt.rcParams['animation.ffmpeg_path'] = 'C:\\Users\Martin\\Downloads\\ffmpeg-20180203-e3d946b-win64-static' \
-                                                '\\ffmpeg-20180203-e3d946b-win64-static\\bin\\ffmpeg'
+        plt.rcParams['animation.ffmpeg_path'] = 
+        'C:\\Users\Martin\\Downloads\\ffmpeg-20180203-e3d946b-win64-static' \
+        '\\ffmpeg-20180203-e3d946b-win64-static\\bin\\ffmpeg'
         mywriter = animation.FFMpegWriter(fps=20)
         anim.save('mymovie.mp4', writer=mywriter, dpi=1000)
 

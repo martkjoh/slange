@@ -1,6 +1,6 @@
 import numpy as np
 
-def Jacobi(A, b, x0, tol = 1e-6):
+def jacobi(A, b, x0, tol = 1e-10):
     n = len(A)
     M = np.copy(A)
     DInv = np.zeros((n, n))
@@ -11,18 +11,20 @@ def Jacobi(A, b, x0, tol = 1e-6):
 
     while (True):
         x = DInv @ (b - M @ x0)
-        if max(abs(x - x0)) / max(abs(x0)) < tol:
+        if max(abs(x - x0))  < tol:
             return x
         x0 = x
         k += 1
-        print(k)
+        print(max(abs(x - x0)))
 
-def GaussSeidel(A, b, x0, tol = 1e-10):
+
+def gaussSeidel(A, b, x0, tol = 1e-10):
     n = len(A)
     x = np.copy(x0)
     k = 0
 
     while (True):
+        print(k)
         for i in range(n):
             s = b[i]
             for j in range(n):
@@ -36,13 +38,17 @@ def GaussSeidel(A, b, x0, tol = 1e-10):
 
         x0 = np.copy(x)
         k += 1
-        print(k)
 
-n = 1000
-A = np.random.rand(n, n) + np.diag(np.ones(n) * n)
-b = np.random.rand(n)
-x = np.random.rand(n)
-x = Jacobi(A, b, x)
 
-print()
-print(max(abs(A @ x - b)))
+
+
+if __name__ == "__main__":
+    n = 1000
+    A = np.random.rand(n, n) + np.diag(np.ones(n) * n)
+    b = np.random.rand(n)
+    x = np.random.rand(n)
+
+    x = jacobi(A, b, x)
+
+    print()
+    print(max(abs(A @ x - b)))
