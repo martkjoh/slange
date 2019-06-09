@@ -1,33 +1,24 @@
 import numpy as np
-from numpy import exp, log, sin, cos, sqrt
-from numpy import e, pi
+from numpy import exp, log, sin, cos, sqrt, e, pi
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation as anim
 
-def naive(x, fx):
-    return (exp(- 2 * pi * 1j * np.outer(x, x)) @ fx)
+def fourier(x, fx):
+    delta = pi / (x[-1] - x[0])
+    return exp(- 1j * np.outer(x, x) * delta) @ fx * delta / len(x)
 
-def f(x, n):
+def f(x):
     m = 0
-    s = 0.1
-    xn = np.zeros(n)
-    xe = 1 / sqrt(2 * pi * s) * exp(-(x - m)**2 / 2 / s)
-    return np.concatenate([xn, xe[n:-n], xn])
+    s = 1
+    return 1 / sqrt(2*pi) * exp(-x**2 / 2)
 
-a = 15
-n = 2000
+a = 1
+n = 4000
 x = np.linspace(-a, a, n)
+fx = f(x)
+fHat = fourier(x, fx)
 
 fig, ax = plt.subplots(1, 2)
-
-def animate(n):
-    n += 950
-    ax[0].cla()
-    ax[1].cla()
-    fx = f(x, n)
-    l = ax[0].plot(x, fx)
-    l += ax[1].plot(x, (naive(x, fx)))
-    return l
-
-a = anim(fig, animate, blit = True)
+ax[0].plot(x, fx)
+ax[1].plot(x, fHat.real)
 plt.show()
