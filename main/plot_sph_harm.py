@@ -61,7 +61,8 @@ def makeLayout():
         ),
     )
 
-data = makePlot(5, plotType = "color")
+data = makePlot(1, plotType = "color")
+print(data)
 layout = makeLayout()
 
 fig = go.Figure(data = data, layout = layout)
