@@ -14,12 +14,10 @@ def Cholesky(A):
         L[i, i] = np.sqrt(A[i, i])
         for j in range(i + 1, N):
             L[i, j] = A[i, j] / L[i, i]
-            print(L)
         
         for j in range(i + 1, N):
             for k in range(i + 1, N):
-                A[j, k] -= L[i, j] * L[i, k]
-        
+                A[j, k] -= L[i, j] * L[i, k]        
 
     return L
 

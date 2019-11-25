@@ -26,13 +26,8 @@ def gaussSeidel(A, b, x0, tol = 1e-10):
     while (True):
         print(k)
         for i in range(n):
-            s = b[i]
-            for j in range(n):
-                if i == j:
-                    continue
-                s -= A[i, j] * x[j]
-            x[i] = s / A[i, i]
-
+            x[i] = (b[i] - np.delete(A[i], i) @ np.delete(x, i)) / A[i, i]
+        
         if max(abs(x - x0)) < tol:
             return x
 
@@ -48,7 +43,7 @@ if __name__ == "__main__":
     b = np.random.rand(n)
     x = np.random.rand(n)
 
-    x = jacobi(A, b, x)
+    x = gaussSeidel(A, b, x)
 
     print()
     print(max(abs(A @ x - b)))

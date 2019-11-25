@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 # Jones-vector
 v = np.array([
-    1j, 
-    1
+    1, 
+    3j
 ])
 
 # Normalization
