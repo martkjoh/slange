@@ -1,36 +1,39 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import cm
 
 # parameters
 # Number of times to run the iterationn
-N = 10
+N = 100
 # Resolution
-M = 3000
+M = 1000
 # Threashold
 thresh = 2
 # The boundaries of the values to check
-im = 1.2
+im = 1
 re = 2
-x = np.linspace(-2, 1, M)
-y = np.linspace(-im, im, M)
-vals = np.empty((M, M))
+x = np.linspace(-2, 1, M).astype(np.float64)
+y = np.linspace(-im, im, M).astype(np.float64)
+x, y = np.meshgrid(x, y)
+c = x + y * 1j
 
 def f(z, c):
     return z**2 + c
 
 def findDiv(c):
-    z = f(0, c)
-    for i in range(N):
+    z = f(0.9, c)
+    mesh = np.greater(abs(z), thresh).astype(int)
+    vals = mesh
+    for i in range(1, N):
         z = f(z, c)
-        if abs(z) > thresh:
-            return abs(z)
-    else:
-        return 0
+        mesh = np.greater(abs(z), thresh).astype(int)
+        vals += mesh
+        print(i)
+    
+    return vals 
 
-for i in range(M):
-    for j in range(M):
-        vals[j, i] = findDiv(x[i] + 1j * y[j])
+vals = findDiv(c)
 
-plt.imshow(vals)
+plt.imshow(vals, cmap = cm.coolwarm)
 plt.savefig("mandel.pdf")
 plt.show()
