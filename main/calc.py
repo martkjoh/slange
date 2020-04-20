@@ -5,6 +5,8 @@ from numpy import log as ln
 from sympy import oo as inf
 from sympy import integrate, Function, symbols
 from scipy.special import gamma, laguerre, legendre, hermite, chebyc
+from matplotlib import pyplot as plt
+
 
 hbar = 1.05457e-34
 h = hbar * 2*pi
