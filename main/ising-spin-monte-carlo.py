@@ -9,6 +9,8 @@ Tc = 2/(ln(1+sqrt(2)))
 def get_s(N):
     return choice([-1., 1.], (N, N))
 
+# Changing spins one-by-one in the Monte carlo sweep
+
 @njit()
 def get_boundary(bc, s=0, i=0):
     if bc==0: return (1, 1)         # Plus-plus
@@ -22,21 +24,6 @@ def get_neighbours(s, i, j, N, bc) -> np.ndarray:
         s_neigh[0, 0] = s[i, j-1]; s_neigh[0, 1] = s[i, (j+1)%N]
         boundary = get_boundary(bc, s, i)
         if (i==0): s_neigh[1, 0] = boundary[0]
-        else: s_neigh[1, 0] = s[i-1, j]
-        if (i==N-1): s_neigh[1, 1] = boundary[1]
-        else: s_neigh[1, 1] = s[i+1, j]
-        return s_neigh
-
-@njit()
-def MC_sweep_serial(s, N, T, bc=0):
-    for i in range(N**2):
-        i, j = randint(0, N, size=2)
-        s_neigh = get_neighbours(s, i, j, N, bc)
-        delta_H = 2*s[i,j]*np.sum(s_neigh)
-        if delta_H<0:
-            s[i, j] *= -1
-            continue
-        W = exp(-delta_H/T)
         a = rand()
         if W>a: 
             s[i, j] *= -1
@@ -46,6 +33,8 @@ def run_sweeps_serial(s, N, T, num_sweeps, bc=0):
     for j in range(num_sweeps):
         MC_sweep_serial(s, N, T, bc=bc)
 
+    
+# Changing all spins in the lattice w porbability 
 
 def run_sweeps_paralell(s, N, T, num_sweeps, bc=0):
     def apply_bc(s, N, bc):
@@ -56,7 +45,7 @@ def run_sweeps_paralell(s, N, T, num_sweeps, bc=0):
 
 
     def sum_neigh_lattice(s, N, bc=0):
-        """ sum over product of neares neighbours of lattice """
+        """ retrns lattice with elements times sum over neares neighbours """
         s_w_bound = apply_bc(s, N, bc)
         sum_neigh = np.zeros_like(s)
         for j in range(2):
@@ -66,7 +55,7 @@ def run_sweeps_paralell(s, N, T, num_sweeps, bc=0):
 
 
     def MC_sweep_paralell(s, N, T, bc=0):
-        """ MC-hastings sweep, with prob. c of flipping each spin each loop """
+        """ MC-hastings sweep, with prob. c of trying to flipping each spin each loop """
         c = 0.5
         for i in range(1+int(1/c)):
             delta_H = 2*sum_neigh_lattice(s, N, bc=bc)
