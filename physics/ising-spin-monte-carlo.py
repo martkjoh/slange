@@ -2,95 +2,110 @@ import numpy as np
 from numpy import exp, sqrt, log as ln
 from numpy.random import choice, randint, rand
 from matplotlib import pyplot as plt
-from numba import njit
 
 Tc = 2/(ln(1+sqrt(2)))
 
 
 def get_s(N):
-    return choice([-1., 1.], (N, N))
+    """ Return lattice of spins, randomly oriented """
+    return choice((-1, 1), (N, N))
+
+def magnetization(s, N):
+    return np.abs(np.sum(s)) / N**2
+
 
 # Changing spins one-by-one in the Monte carlo sweep
+def serial_sweeps(s, N, T, num_sweeps):
+    def get_delta_H(s, N, i, j):
+        """ retrns changin in energy from flipping spin (i, j) """
+        sum_neigh = s[i - 1, j] + s[(i + 1) % N, j]+ s[i, j - 1]+ s[i, (j + 1) % N]
+        B = 0.01
+        return 2*s[i, j] * (sum_neigh + B)
+        
+    def MC_sweep(s, N, T):
+        """ One sweep of the hastings algorithm """
+        for _ in range(N ** 2):
+            i, j = randint(N, size=2)
+            delta_H = get_delta_H(s, N, i, j)
+            if delta_H < 0:
+                s[i, j] *= -1
+                continue
+            if exp(-delta_H / T) > rand():
+                s[i, j] *= -1
 
-
-@njit()
-def get_boundary(bc, s=0, i=0):
-    if bc == 0:
-        return (1, 1)         # Plus-plus
-    elif bc == 1:
-        return (1, -1)      # Plus-minus
-    else:
-        raise Exception("Boundary condition not recognized")
-
-
-@njit()
-def get_neighbours(s, i, j, N, bc) -> np.ndarray:
-    s_neigh = np.zeros((2, 2))
-    s_neigh[0, 0] = s[i, j-1]
-    s_neigh[0, 1] = s[i, (j+1) % N]
-    boundary = get_boundary(bc, s, i)
-    if (i == 0):
-        s_neigh[1, 0] = boundary[0]
-    a = rand()
-    if W > a:
-        s[i, j] *= -1
-
-
-@njit()
-def run_sweeps_serial(s, N, T, num_sweeps, bc=0):
     for j in range(num_sweeps):
-        MC_sweep_serial(s, N, T, bc=bc)
+        MC_sweep(s, N, T)
 
-
-# Changing all spins in the lattice w porbability
-
-def run_sweeps_paralell(s, N, T, num_sweeps, bc=0):
-    def apply_bc(s, N, bc):
-        """ Rerturns copy of lattice w/ boundary conditions attached"""
-        row = np.ones((1, N))
-        vals = get_boundary(bc)
-        return np.concatenate((vals[0]*row, s, vals[1]*row))
-
-    def sum_neigh_lattice(s, N, bc=0):
-        """ retrns lattice with elements times sum over neares neighbours """
-        s_w_bound = apply_bc(s, N, bc)
+# Changing all spins in the lattice w porbability c
+def paralell_sweeps(s, N, T, num_sweeps):
+    def get_delta_H(s, N):
+        """ retrns lattice with change in energy from flipping each spin"""
         sum_neigh = np.zeros_like(s)
         for j in range(2):
-            for n in [-1, 1]:
-                sum_neigh += np.roll(s_w_bound, n, axis=j)[1:-1]
-        return s*sum_neigh
+            for n in (-1, 1):
+                sum_neigh += np.roll(s, n, axis=j)
 
-    def MC_sweep_paralell(s, N, T, bc=0):
+        B = 0.01
+        return 2*s*(sum_neigh + B)
+
+    def MC_sweep(s, N, T):
         """ MC-hastings sweep, with prob. c of trying to flipping each spin each loop """
         c = 0.5
-        for i in range(1+int(1/c)):
-            delta_H = 2*sum_neigh_lattice(s, N, bc=bc)
-            W = np.ones_like(delta_H)
+        for i in range(1 + int(1 / c)):
+            to_flip = rand(N, N) < c
+            delta_H = get_delta_H(s, N)
             pos = delta_H > 0
-            W[pos] = exp(-delta_H[pos]/T)
-            indx = np.logical_and(W > rand(N, N), c > rand(N, N))
-            s[indx] *= -1
+            to_flip2 = exp(-delta_H[pos] / T) > rand(np.sum(pos))
+            to_flip[pos] = np.logical_and(to_flip[pos], to_flip2)
+            s[to_flip] *= -1
 
     for j in range(num_sweeps):
-        MC_sweep_paralell(s, N, T, bc=bc)
+        MC_sweep(s, N, T)
 
 
-def plot_equilibration(N, m, bc, num_sweeps, sweep_func):
-    Ts = np.linspace(0.01, Tc, m)
-    tau = np.empty(m)
+def plot_equilibration(sweep_func):
+    N = 20
+    m = 6
+    num_sweeps = 10
+    Ts = np.linspace(0.01, 1.2*Tc, m)
 
-    fig, ax = plt.subplots(2, m)
+    fig, ax = plt.subplots(2, m)    
 
-    for i, T in enumerate(Ts):
-        print(i)
+    for j, T in enumerate(Ts):
         s = get_s(N)
-        ax[0, i].set_title("$T = {:.3f}$".format(T))
-        ax[0, i].imshow(s)
-        sweep_func(s, N, T, num_sweeps, bc=bc)
-        ax[1, i].imshow(s)
+        ax[0, j].set_title("$T = {:.3f}$".format(T))
+        ax[0, j].imshow(s)
+        paralell_sweeps
+        sweep_func(s, N, T, num_sweeps)
+        ax[1, j].imshow(s)
 
     plt.show()
 
 
+def plot_magnetization(sweep_func):
+    n = 100
+    m = 10
+    equibliration = 1000
+    Ns = [10, 20, 30]
+    Ts = np.linspace(0.01, 1.2*Tc, m)
+
+    fig, ax = plt.subplots()    
+
+    for i, N in enumerate(Ns):
+        M = np.empty(m)
+        for j, T in enumerate(Ts):
+            s = get_s(N)
+            M_ave = 0
+            sweep_func(s, N, T, equibliration)
+            for _ in range(n):
+                M_ave += magnetization(s, N)            
+            M[j] = M_ave/n
+        ax.plot(Ts, M)
+    plt.show()
+
+
 if __name__ == "__main__":
-    plot_equilibration(50, 4, 1, 1_000, run_sweeps_serial)
+    # plot_equilibration(paralell_sweeps)
+    # plot_equilibration(serial_sweeps)
+    plot_magnetization(paralell_sweeps)
+    
