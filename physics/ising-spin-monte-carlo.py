@@ -2,6 +2,7 @@ import numpy as np
 from numpy import exp, sqrt, log as ln
 from numpy.random import choice, randint, rand
 from matplotlib import pyplot as plt
+from os.path import expanduser
 
 Tc = 2/(ln(1+sqrt(2)))
 
@@ -45,7 +46,7 @@ def paralell_sweeps(s, N, T, num_sweeps):
             for n in (-1, 1):
                 sum_neigh += np.roll(s, n, axis=j)
 
-        B = 0.01
+        B = 0.001
         return 2*s*(sum_neigh + B)
 
     def MC_sweep(s, N, T):
@@ -66,7 +67,7 @@ def paralell_sweeps(s, N, T, num_sweeps):
 def plot_equilibration(sweep_func):
     N = 20
     m = 6
-    num_sweeps = 10
+    num_sweeps = 100
     Ts = np.linspace(0.01, 1.2*Tc, m)
 
     fig, ax = plt.subplots(2, m)    
@@ -82,11 +83,14 @@ def plot_equilibration(sweep_func):
     plt.show()
 
 
-def plot_magnetization(sweep_func):
-    n = 100
-    m = 10
-    equibliration = 1000
-    Ns = [10, 20, 30]
+def plot_magnetization(sweep_func, name):
+    # Number of sweeps per start value
+    n = 10
+    # Number of random start values
+    k = 1
+    m = 5
+    equibliration = 500
+    Ns = [8, 16]
     Ts = np.linspace(0.01, 1.2*Tc, m)
 
     fig, ax = plt.subplots()    
@@ -94,18 +98,22 @@ def plot_magnetization(sweep_func):
     for i, N in enumerate(Ns):
         M = np.empty(m)
         for j, T in enumerate(Ts):
-            s = get_s(N)
-            M_ave = 0
-            sweep_func(s, N, T, equibliration)
-            for _ in range(n):
-                M_ave += magnetization(s, N)            
-            M[j] = M_ave/n
-        ax.plot(Ts, M)
-    plt.show()
-
+            print(j)
+            for _ in range(k):
+                s = get_s(N)
+                M_ave = 0
+                sweep_func(s, N, T, equibliration)
+                for _ in range(n):
+                    M_ave += magnetization(s, N)            
+            M[j] = M_ave / n / k
+        ax.plot(Ts, M, ".", label="$N={}$".format(N))
+    plt.legend()
+    plt.savefig(expanduser("~") + "/" + name + ".png")
+    plt.close(fig)
+    
 
 if __name__ == "__main__":
     # plot_equilibration(paralell_sweeps)
     # plot_equilibration(serial_sweeps)
-    plot_magnetization(paralell_sweeps)
-    
+    plot_magnetization(paralell_sweeps, "paralell")
+    plot_magnetization(serial_sweeps, "serial")
