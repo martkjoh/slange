@@ -14,7 +14,7 @@ def generate(t):
 
 
 def animate(n):
-    n = n * speed
+    n = int(n * speed)
     ax.cla()
     ax.set_xlabel("x")
     ax.set_ylabel("y")
