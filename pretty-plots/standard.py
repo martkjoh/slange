@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+from matplotlib import cm
 from matplotlib.colors import LogNorm
 
 plt.rcParams['mathtext.fontset'] = 'cm'
@@ -37,5 +38,17 @@ def histogram2D():
     
     plt.show()
 
+def surface_3D():
+    x, y = np.meshgrid(np.linspace(0, 1, 100), np.linspace(0, 1.5, 100))
 
-histogram2D()
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+    surf = ax.plot_surface(
+        x, y, x** 2*(x** 2 - y** 2)** 2,
+        cmap=cm.viridis
+        )
+    fig.colorbar(surf)
+    
+    plt.show()
+
+
+surface_3D()
