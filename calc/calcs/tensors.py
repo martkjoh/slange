@@ -8,6 +8,8 @@ import sympy as sp
 import sys
 from IPython.display import display, Latex
 
+# TODO: Clean up namespace, should not import so much
+
 #############
 # UTILITIES #
 #############
@@ -74,6 +76,26 @@ def raise_indx(T, g_inv, indx, num_indx):
 def lower_indx(T, g, indx, num_indx):
     """ Lower index 'indx' of a tensor T with 'num_indx' indices. """
     return raise_indx(T, g, indx, num_indx)
+
+
+# Print functions for jupyter notebook
+
+def print_christoffel(C, var):
+    """ A function for dsiplaying christoffels symbols """
+    output = []
+    for i in range(len(var)):
+        txt = "$$"
+        txt += "\Gamma^" + sp.latex(var[i]) + "_{\\alpha \\beta} ="
+        txt += sp.latex(Matrix(C[i]))
+        txt += "$$"
+        output.append(display(Latex(txt)))
+    return output
+
+def print_tensor(T, name="T"):
+    return display(Latex("$$" + name + "=" + sp.latex(Matrix(T)) +"$$"))
+
+def print_scalar(S, name="S"):
+    return display(Latex("$$" + name + "=" + sp.latex(S) +"$$"))
 
 
 ############
@@ -268,7 +290,5 @@ def kerr():
 
 
 if __name__ == "__main__":
-    with open('metric_analysis.txt', 'w', encoding='utf-8') as f:
-        sys.stdout = f
-        # reissner_norstroem()
-        kerr()
+    # reissner_norstroem()
+    kerr()

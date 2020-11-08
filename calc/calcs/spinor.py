@@ -5,38 +5,43 @@ from sympy import I, sqrt
 from sympy.physics.quantum.dagger import Dagger
 from sympy.printing import pprint
 
+# Has einsum impolementation that supports sympy symobls
+import opt_einsum as oe
+
+# . needed for this to work when imported
 from .tensors import INDX, contract, raise_indx, lower_indx
 
-#TODO: Use rational instead?
 
-I = 1j
+# I = sp.Rational(1)*I
 dim = 4
 g = np.diag([1, -1, -1, -1])  # The minkowski metric
 
 # Pauli matrices
-s = np.empty((3, 2, 2), dtype=type(I))
+s = np.empty((3, 2, 2), dtype=type(sp.Rational(1)))
+
+one = sp.Rational(1)
 s[0] = np.array([
-    [0, 1],
-    [1, 0]
+    [0, one],
+    [one, 0]
 ])
 s[1] = np.array([
     [0, -I],
     [I, 0]
 ])
 s[2] = np.array([
-    [1, 0],
-    [0, -1]
+    [one, 0],
+    [0, -one]
 ])
 
 # Dirac matricies
-Oh = np.zeros((2, 2))
-eye = np.identity(2)
+Oh = np.zeros((2, 2), dtype=type(sp.Rational))
+eye = np.identity(2, dtype=type(sp.Rational))
 Id = np.block([
     [eye, Oh],
     [Oh, eye]
-])
+    ])
 
-γ = np.empty((4, 4, 4), type(I))
+γ = np.empty((4, 4, 4), type(sp.Rational(1)))
 γ[0] = np.block([
     [eye, Oh],
     [Oh, -eye]
@@ -50,6 +55,7 @@ for i in range(3):
 
 γ5 = I * (γ[0] @ γ[1] @ γ[2] @ γ[3])
 γ5_γ = np.array([γ5 @ γ[i] for i in range(dim)])
+γ_γ5 = np.array([γ[i] @ γ5 for i in range(dim)])
 
 # Returns the adjoint spinor
 def adj(u):
@@ -59,14 +65,16 @@ def slash(a):
     return sp.Matrix(sum([γ[i] * a[i] for i in range(dim)]))
 
 def contract_tensor_vector(T, p):
-    """ Contracts tensor with list of vectors """
+    """ Contracts tensor with list of vectors recursivley """
     if len(p)==0: return T
-    return contract_tensor_vector(sum([T[i,...] * p[0][i] for i in range(dim)]), p[1::])
+    return contract_tensor_vector(sum([T[i, ...] * p[0][i] for i in range(dim)]), p[1::])
 
 
 def Tr(γ_list):
     """ Returns TR[γ_list[0] γ_list[1] ...] """
-    indcs = "abcdefghijklmn"
+    # Einsum does not accept sp.Rational :(
+    # γ_list = [np.array(γ, dtype=type(1j)) for γ in γ_list] 
+    indcs = "abcdefghijklmn" # just in case
     nr_indx = len(γ_list)
     shape = [dim] * nr_indx + [dim, dim]
     A = np.full(shape, γ_list[0])
@@ -75,9 +83,9 @@ def Tr(γ_list):
         s_indx = indcs[:len(γ_list)] + "xy, "
         s_indx += indcs[len(γ_list) - 2 - i] + "yz -> "
         s_indx += indcs[:len(γ_list)] + "xz"
-        A = np.einsum(s_indx, A, γ)
+        A = oe.contract(s_indx, A, γ, backend='object')
 
-    return np.einsum("...ii", A)    
+    return oe.contract("...ii", A, backend='object')
 
 
 def test():
