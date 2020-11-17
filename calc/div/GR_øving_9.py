@@ -1,9 +1,11 @@
 from calcs.numerics import *
 
-ω = 10 / (2 * pi)
+
 R = 0.1 * AU
 M = 2 * m_earth
 r = 5e4 * ly
+ω = sqrt(G * M / (4 * R**2))
+10 / (2 * pi)
 
 A = 8 * G/c**2 * M * (R * ω / c)**2 / r 
 print("1c) Amplitude = ", A)
