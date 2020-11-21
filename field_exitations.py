@@ -8,40 +8,30 @@ from matplotlib import cm
 from matplotlib.animation import FuncAnimation as FA
 
 Nx = 100
-Nt = 500
+Nt = 200
 dt = 0.01
 
-def get_D2x():
-    """ 3 point stencil for second derivative with periodic bc's """
-    daig_0 = -2 * np.ones(Nx)
-    diag_1 = np.ones(Nx - 1)
-    return sparse.diags(
+daig_0 = -2 * np.ones(Nx)
+diag_1 = np.ones(Nx - 1)
+
+# Single derivative
+Dx = sparse.diags(
+        [-(1 / 2), -(1/2)*diag_1, -(1/2)*diag_1, -(1 / 2)],
+        [-(Nx - 1), -1, 1, (Nx - 1)]
+    ).toarray()
+
+# Double derivative
+D2x = sparse.diags(
         [1, diag_1, daig_0, diag_1, 1],
         [-(Nx - 1), -1, 0, 1, (Nx - 1)]
-        ).toarray()
-
-def get_Dx():
-    """ 2 point stencil for first derivative with periodic bc's """
-    diag_1 = -(1 / 2) * np.ones(Nx-1)
-    return sparse.diags(
-        [-(1 / 2), diag_1, diag_1, -(1 / 2)],
-        [-(Nx - 1), -1, 1, (Nx - 1)]
-        ).toarray()
+    ).toarray()
 
 def get_inital(f0, derivs):
     f = np.empty((Nt, Nx, derivs), dtype="complex128")
     f[0] = f0
     return f
-
-def time_step(f, i, Dt, dt, order, steps):
-    f_new = f[i - 1]
-    for _ in range(steps):
-        f_new[:, 0] += (Dt @ f_new[:, -1]) * dt
-        for j in range(1, order):
-            f_new[:, j] += f_new[:, j-1] * dt
-    f[i] = f_new
     
-def time_step2(f, i, g, dt, order, steps):
+def time_step(f, i, g, dt, order, steps):
     f_new = f[i - 1]
     for _ in range(steps):
         f_new[:, 0] += g(f_new[:, -1]) * dt
@@ -75,40 +65,30 @@ def animate_field_line(f):
 
 # Equations of motion for different fields
 
-def get_heat_eq(c=20):
-    return c * get_D2x()
+def heat_eq(f, c=2):
+    return c * D2x @ f
 
-def get_wave_eq(c=1):
-    return c * get_D2x()
+def wave_eq(f, c=1):
+    return c * D2x @ f
 
-def get_KG(m=0.2):
-    return get_D2x() - m ** 2 * np.identity(Nx)
+def KG(f, m=0.2):
+    return (D2x - m ** 2 * np.identity(Nx)) @ f
 
 def mexican_hat(f, m=1, l=0.01):
-    D2x = get_D2x()
     return D2x @ f - m**2 * f + 4 * l * f**3
 
 
-def simulate_field(get_Dt, f0, order, steps):
-    f = get_inital(f0, order)
-    Dt = get_Dt(Nx)
-
-    for i in range(1, Nt):
-        time_step(f, i, Dt, dt, order, steps)
-    
-    animate_field_line(f)
-
-def simulate_field2(g, f0, order, steps):
+def simulate_field(g, f0, order, steps):
     f = get_inital(f0, order)
 
     for i in range(1, Nt):
-        time_step2(f, i, g, dt, order, steps)
+        time_step(f, i, g, dt, order, steps)
     
     animate_field_line(f)
+    plot_field_surface(f)
 
 
-# TODO: add coupling term, non-linear eqs. of motion, 
-# TODO: make the list arbitrary long in t-direction, vector-equations(?)
+# TODO: add coupling term, vector-equations(?)
 
 
 x = np.linspace(0, 1, Nx)
@@ -116,13 +96,13 @@ gaussian = np.exp(-(x - 1 / 2)** 2 * 200)
 shape = np.sin(x * (2*np.pi))
 
 # f0 = np.array([gaussian,]).T
-# simulate_field(N, get_heat_eq, f0, 1, 50)
+# simulate_field(heat_eq, f0, 1, 50)
 
-# f0 = np.array([np.zeros(N), gaussian,]).T
-# simulate_field(N, get_wave_eq, f0, 2, 100)
+# f0 = np.array([np.zeros(Nx), gaussian,]).T
+# simulate_field(wave_eq, f0, 2, 100)
 
-# f0 = np.array([np.zeros(N), gaussian,]).T
-# simulate_field(N, get_KG, f0, 2, 150)
+# f0 = np.array([np.zeros(Nx), gaussian,]).T
+# simulate_field(KG, f0, 2, 150)
 
 f0 = np.array([np.zeros(Nx), shape, ]).T
-simulate_field2(mexican_hat, f0, 2, 100)
+simulate_field(mexican_hat, f0, 2, 100)
