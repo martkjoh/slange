@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 from matplotlib import cm
 from matplotlib.colors import LogNorm
+from matplotlib.animation import FuncAnimation as FA
 
 plt.rcParams['mathtext.fontset'] = 'cm'
 font = {'family' : 'serif', 
@@ -50,5 +51,19 @@ def surface_3D():
     
     plt.show()
 
+def animate_line():
+    fig, ax = plt.subplots()
+    x = np.linspace(-1, 1, 1000)
+    f = lambda x, t, s: 1/np.sqrt(4*np.pi * s  *t) * np.exp(-x**2 / (4*s*t))
+    dt = 0.001; s = 0.1
+    l = [ax.plot(x, f(x, dt, s))[0], ]
 
-surface_3D()
+    def anim(n):
+        l[0].set_data(x, f(x, (n+1)*dt, s))
+        return l
+
+    a = FA(fig, anim, blit=True, interval=10)
+    plt.show()
+
+
+animation_line()

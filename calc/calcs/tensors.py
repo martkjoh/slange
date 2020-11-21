@@ -142,8 +142,6 @@ def Riemann_tensor(C, var):
 
 
 def Ricci_tensor(Rie):
-    return - contract(Rie, upper=1, num_indx=4, indx=(0, 2))
-
 
 def Ricci_scalar(Ricci, g_inv):
     return contract(Ricci, upper=0, g_inv=g_inv)

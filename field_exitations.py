@@ -51,7 +51,7 @@ def plot_field_real(f, N):
 def get_heat_eq(N, c=20):
     return c * get_D2x(N)
 
-def get_wave_eq(N, f0, c=1):
+def get_wave_eq(N, c=1):
     return c * get_D2x(N)
 
 def get_KG(N, m=0.2):
@@ -75,11 +75,11 @@ N = 100
 x = np.linspace(0, 1, N)
 gaussian = np.exp(-(x - 1 / 2)** 2 * 100)
 
-f0 = np.array([gaussian,]).T
-simulate_field(N, get_heat_eq, f0, 1, 50)
+# f0 = np.array([gaussian,]).T
+# simulate_field(N, get_heat_eq, f0, 1, 50)
+# 
+# f0 = np.array([np.zeros(N), gaussian,]).T
+# simulate_field(N, get_wave_eq, f0, 2, 100)
 
 f0 = np.array([np.zeros(N), gaussian,]).T
-simulate_field(N, get_wave_eq, f0, 2, 50)
-
-f0 = np.array([np.zeros(N), gaussian,]).T
-simulate_field(N, get_KG, f0, 2, 100)
+simulate_field(N, get_KG, f0, 2, 150)
