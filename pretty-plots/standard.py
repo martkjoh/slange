@@ -66,4 +66,4 @@ def animate_line():
     plt.show()
 
 
-animation_line()
+animate_line()
