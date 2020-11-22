@@ -3,25 +3,17 @@ from numpy import sqrt, pi
 import matplotlib.pyplot as plt
 
 
-def acc(x, a=0.1):
-    """ 
-    Takes in x[t, 0], returns the acceleration at that point 
-    """
+a = 0.1
+
+def acc(x):
     r2 = x[0]** 2 + x[1]** 2
     x_hat = x / sqrt(r2)
     return - x_hat / r2 * (1 + a / r2)
 
-
 def f(x):
-    """
-    Takes in x[t], returns the derivatives at that timestep
-    """
     return np.array( [x[1], acc(x[0])] )
 
 def RK4step(x, t, dt):
-    """
-    Takes in x, t, innserts x[t+1]
-    """
     k1 = f(x[t]) * dt
     k2 = f(x[t] + 1 / 2 * k1) * dt
     k3 = f(x[t] + 1 / 2 * k2) * dt
@@ -29,7 +21,9 @@ def RK4step(x, t, dt):
     x[t + 1] = x[t] + 1 / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
 
 def energy(x):
-    return - 1 / sqrt(x[:, 0, 0]** 2 + x[:, 0, 1]** 2) +  1 / 2 * sqrt(x[:, 1, 0]**2 + x[:, 1, 1]**2)    
+    r2 = x[:, 0, 0]** 2 + x[:, 0, 1]** 2
+    v2 =  sqrt(x[:, 1, 0]**2 + x[:, 1, 1]**2)
+    return - 1/sqrt(r2) +  1 / 2 * v2 
     
 def find_min(x):
     min_ts = []
@@ -67,10 +61,10 @@ def plot_dE(x, T):
     ax.plot(t, dE)
     plt.show()
 
-def plot_dE_afo_dt(x0, T):
+def plot_dE_afo_dt(x0):
     T = 2 * pi
-    n = 40
-    dts = np.logspace(-1, -3, n)
+    n = 20
+    dts = np.logspace(-3, -0.1, n)
     dEs = np.empty(n)
     for i, dt in enumerate(dts):
         x = simulate_orbit(x0, dt, T)
@@ -85,10 +79,12 @@ def plot_dE_afo_dt(x0, T):
 
 x0 = np.array([[1, 0], [0, 1]])
 dt = 0.01
-T = 2*pi * 2
+T = 2*pi * 20
 x = simulate_orbit(x0, dt, T)
 
 
 plot_orb(x)
+
+# Only works for a=0
 plot_dE(x, T)
-plot_dE_afo_dt(x0, T)
+plot_dE_afo_dt(x0)
