@@ -63,7 +63,7 @@ def animate_line():
         return l
 
     a = FA(fig, anim, blit=True, interval=10)
-    plt.show()
+    a.save("filename.mp4")
 
 
 animate_line()
