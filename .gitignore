@@ -3,4 +3,4 @@
 *.ini
 *.mp4
 *.ipynb_checkpoints
-__pycache__/
+**/__pycache__/**
