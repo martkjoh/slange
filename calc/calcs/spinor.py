@@ -9,7 +9,7 @@ from sympy.printing import pprint
 import opt_einsum as oe
 
 # . needed for this to work when imported
-from .tensors import INDX, contract, raise_indx, lower_indx
+from tensors import INDX, contract, raise_indx, lower_indx
 
 
 # I = sp.Rational(1)*I
@@ -94,17 +94,17 @@ def test():
     Assuming all particles have helicity one, and the CM-fram, motion in z-dir, meaning 
     line 1 and 4 have spin up, line 3 and 4 have spin down. This gives the spinnors below.
     p2\     /p4
-    \   ^
+       \   ^
         \ / μ
-    γ §
-        §
+       γ §
+         §
         / \e
-    ^   \.
+       ^   \.
     p1/     \p3
     """
 
     # This is to make sure sympy knows these are real numbers
-    me, Ee, Em, mm, g = sp.symbols("me, Ee, mm, Em g", positive=True)
+    me, Ee, Em, mm = sp.symbols("me, Ee, mm, Em", positive=True)
     ap = sp.symbols("ap", positive=True)  # sqrt(Ee + me)
     am = sp.symbols("am", positive=True)  # sqrt(Ee - me)
     bp = sp.symbols("bp", positive=True)  # sqrt(Em + mm)
@@ -121,5 +121,6 @@ def test():
         
     M *= g ** 2 / (4 * am * bp * bm * ap)
 
-    pprint(M.simplify())
+    pprint(M)
 
+test()
