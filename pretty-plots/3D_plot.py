@@ -10,12 +10,27 @@ def f(x, y, t):
 
 
 
+def g(x, y, z, k):
+    vals = 1 / (x * y + y * z + z * x)**(2 - k)
+    m = 200
+    mask = np.logical_or((vals > m ),(np.isnan(vals)))
+    a = vals
+    a[mask] = m
+    print(mask)
+    return a
+
+def z(x, y):
+    return 1 - x - y
+
+
 def surface_plot():
     N = 100
-    l = np.pi
-    x, y = np.mgrid[-l:l:N*1j, -l:l:N*1j]
+    e = 0.01
+    x, y = np.mgrid[e:1-e:N*1j, e:1-e:N*1j]
 
-    mlab.surf(x, y, f)
+    f = lambda x, y : g(x, y, z(x, y), 0.01)
+    mlab.surf(x, y, f, warp_scale="auto")
+    mlab.points3d(0, 0, 0)
     mlab.show()
 
 def surface_anim():
@@ -58,4 +73,6 @@ def surface_anim():
 
     [os.remove(path + f) for f in os.listdir(path) if f.endswith(ext) and f[:len(name)]==name]
 
-surface_anim()
+
+surface_plot()
+# surface_anim()

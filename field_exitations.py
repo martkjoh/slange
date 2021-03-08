@@ -106,25 +106,25 @@ x = np.linspace(0, 1, Nx)
 gaussian = np.exp(-(x - 1 / 2)** 2 * 200)
 shape = np.exp(1j*x * (2*np.pi))
 
-f0 = np.array([gaussian,]).T
+# f0 = np.array([gaussian,]).T
 A = np.zeros(Nt)
-simulate_field(heat_eq, A, f0, 1, 50)
+# simulate_field(heat_eq, A, f0, 1, 50)
 
 # f0 = np.array([np.zeros(Nx), gaussian,]).T
 # simulate_field(wave_eq, f0, 2, 100)
 
 # f0 = np.array([np.zeros(Nx), gaussian,]).T
-# simulate_field(KG, f0, 2, 150)
+# simulate_field(KG, A, f0, 2, 15)
 
 # f0 = np.array([np.zeros(Nx), shape, ]).T
 # simulate_field(mexican_hat, f0, 2, 100)
 
-# f0 = np.array([gaussian, np.zeros(Nx)]).T
-# x, t = np.meshgrid(np.linspace(0, 1, Nx), np.linspace(0, 1, Nt))
+f0 = np.array([gaussian, np.zeros(Nx)]).T
+x, t = np.meshgrid(np.linspace(0, 1, Nx), np.linspace(0, 1, Nt))
 
-# ws = [45, 47, 50, 52, 55]
+ws = [45, 47, 50, 52, 55]
 
-# for w in ws:
-#     A = np.sin((x - w * t)* 2*np.pi)
-#     simulate_field(KG_interaction, A, f0, 2, 100)
+for w in ws:
+    A = np.sin((x - w * t)* 2*np.pi)
+    simulate_field(KG_interaction, A, f0, 2, 100)
 
