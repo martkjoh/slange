@@ -31,7 +31,7 @@ def histogram():
 
 def histogram2D():
     n = 1_000
-    x = np.random.randn(n, n)
+    x = np.random.randn(2, n)
 
     fig, ax = plt.subplots()
     a = ax.hist2d(x[0], x[1], bins=20, cmin=1)
