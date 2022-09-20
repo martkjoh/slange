@@ -4,11 +4,6 @@ from numba import njit
 from tqdm import trange
 from multiprocessing import Pool, cpu_count
 
-N = 16
-sweeps = 10
-equill = 10000
-num_samples = 10000
-J=1
 
 
 @njit()
@@ -57,7 +52,7 @@ def get_samples(S, T, samples):
     return samples
 
 
-def simulate(T, num_samples):
+def sample(T, num_samples):
     print("T = {:.3f}".format(T))
     # S = np.random.choice([-1, 1], (N, N))
     S = np.ones((N, N))
@@ -79,13 +74,34 @@ def simulate(T, num_samples):
     return samples
 
 
+def gen_grid(T):
+    print(T)
+    S = np.ones((N, N))
+    for i in range(equill): 
+        sweep(S, T)
+    return S
+
+
+N = 4
+J=1
+
+sweeps = 2
+equill = 10000
+
+num_samples = 1000
+
+
 # Ts = np.linspace(0.1, 5, 100)
-# avs = [np.sum(simulate(T))/N**2 for T in Ts]
+# avs = [np.sum(simulate(T, num_samples)["Mag"]/N**2) for T in Ts]
 # plt.plot(Ts, avs, ".")
 # plt.show()
 
-# Ts = np.linspace(0.1, 5, 10)
-# fig, ax = plt.subplots(1, 10)
-# Ss = [simulate(T) for T in Ts]
-# [ax[i].imshow(Ss[i]) for i in range(len(Ss))]
-# plt.show()
+
+N = 100
+J=1
+
+Ts = np.linspace(0.1, 5, 10)
+fig, ax = plt.subplots(1, 10)
+Ss = [gen_grid(T) for T in Ts]
+[ax[i].imshow(Ss[i]) for i in range(len(Ss))]
+plt.show()
