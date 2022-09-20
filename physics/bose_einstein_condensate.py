@@ -90,6 +90,6 @@ def task_c():
 
 
 
-# plot_one(1e-2)
-# task_b()
+plot_one(1e-2)
+task_b()
 task_c()

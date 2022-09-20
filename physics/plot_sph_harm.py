@@ -10,9 +10,11 @@ def R(r, theta, phi, shift):
         abs(r) * cos(theta) * sin(phi) + shift[0], 
         abs(r) * sin(theta) * sin(phi) + shift[1], 
         abs(r) * cos(phi) + shift[2]
-        ]
+    ]
 
-def makeCloud(l, m, plotType, vals):
+
+
+def makeCloud(l, m, vals, plotType):
     n = 100
     theta = np.linspace(0, 2 * pi, n)
     phi = np.linspace(0, pi, n)
@@ -21,16 +23,20 @@ def makeCloud(l, m, plotType, vals):
     if vals == "real": val = val.real
     elif vals == "imag": val = val.imag
     elif vals == "absSq": val = abs(val)**2
+    else: raise Exception()
 
     if plotType == "radial": 
         r = R(val, theta, phi, (m, 0, - l * 1.6))
-        return go.Surface(x = r[0], y = r[1], z = r[2], 
-            surfacecolor = np.sign(val), showscale = False, 
-            colorscale = "Viridis")
+        return go.Surface(
+            x=r[0], y=r[1], z=r[2],
+            surfacecolor=val, 
+            showscale=False, 
+            colorscale="Viridis"
+        )
 
     elif plotType == "color":
         r = R(1, theta, phi, (m * 2.5, 0, - l * 2.5))
-        return go.Surface(x = r[0], y = r[1], z = r[2],
+        return go.Surface(x=r[0], y=r[1], z=r[2],
             surfacecolor = val, showscale = False, 
             colorscale = "Viridis")
 
@@ -61,11 +67,13 @@ def makeLayout():
             zaxis = ax,     
             aspectmode = "data",
         ),
+        width=1000, 
+        height=1000 
     )
 
-# data = makePlot(5, plotType = "color" , vals = "real")
-data = [makeCloud(10, 2, "radial", "absSq")]
-layout = makeLayout()
+# data = makePlot(5, plotType="color", vals="real")
+data = [makeCloud(5, 2, "absSq", "radial")]
 
-fig = go.Figure(data = data, layout = layout)
+layout=makeLayout()
+fig = go.Figure(data=data, layout=layout)
 ply.plot(fig)

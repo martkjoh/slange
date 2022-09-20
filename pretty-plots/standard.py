@@ -5,11 +5,10 @@ from matplotlib import cm
 from matplotlib.colors import LogNorm
 from matplotlib.animation import FuncAnimation as FA
 
-plt.rcParams['mathtext.fontset'] = 'cm'
-font = {'family' : 'serif', 
-        'size': 20}
-plt.rc('font', **font)
-plt.rc('lines', lw=2)
+plt.rc("font", family="serif", size=16)
+plt.rc("mathtext", fontset="cm")
+plt.rc("lines", lw=2)
+plt.rc("axes", grid=True)
 
 def line_plot():
     x = np.linspace(-10, 10, 1000)
@@ -66,4 +65,4 @@ def animate_line():
     a.save("filename.mp4")
 
 
-surface_3D()
+histogram2D()
