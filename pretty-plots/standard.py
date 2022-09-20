@@ -9,10 +9,7 @@ plt.rc("font", family="serif", size=16)
 plt.rc("mathtext", fontset="cm")
 plt.rc("lines", lw=2)
 plt.rc("axes", grid=True)
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 
 def line_plot():
     x = np.linspace(-10, 10, 1000)
