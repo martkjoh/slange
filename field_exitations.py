@@ -8,7 +8,7 @@ from matplotlib import cm
 from matplotlib.animation import FuncAnimation as FA
 
 Nx = 100
-Nt = 100
+Nt = 1000
 dt = 0.01
 
 daig_0 = -2 * np.ones(Nx)
@@ -76,7 +76,7 @@ def KG(f, A, m=0.2):
     return (D2x - m ** 2 * np.identity(Nx)) @ f
 
 # Gaugeing is fixed to A_0 = 0, so A is in effect a scalar
-def KG_interaction(f, A, m=0.2, q=0.4):
+def KG_interaction(f, A, m=0.2, q=0.1):
     interaction = q/2 * (Dx @ f) * A - q**2 * f * A**2
     return (D2x - m ** 2 * np.identity(Nx)) @ f + interaction
 
