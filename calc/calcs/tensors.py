@@ -1,14 +1,11 @@
-from sympy import MatrixSymbol, Matrix, Array, pprint
+from sympy import Matrix
 from sympy import symbols, diff, cos, sin, simplify, Rational
 from sympy.core.symbol import Symbol
 
 import numpy as np
 import sympy as sp
 
-import sys
 from IPython.display import display, Latex
-
-# TODO: Clean up namespace, should not import so much
 
 #############
 # UTILITIES #
@@ -70,6 +67,7 @@ def raise_indx(T, g_inv, indx, num_indx):
         for j in range(dim):
             J = INDX(j, indx, num_indx)
             Tu[I] += g_inv[i, j] * T[J]
+        Tu[I] = simplify(Tu[I])
     return Tu
 
 
@@ -113,10 +111,12 @@ def Christoffel(g, g_inv, var):
         for j in range(dim):
             for k in range(dim):
                 for m in range(dim):
-                    C[i, j, k] += Rational(1, 2) * (g_inv)[i, m] * (
-                        diff(g[m, k], var[j])
-                        + diff(g[m, j], var[k])
-                        - diff(g[k, j], var[m])
+                    C[i, j, k] += \
+                        Rational(1, 2) * (g_inv)[i, m] \
+                        * (
+                            + diff(g[m, k], var[j])
+                            - diff(g[k, j], var[m])
+                            + diff(g[m, j], var[k])
                         )
     return C
 
@@ -124,7 +124,7 @@ def Riemann_tensor(C, var):
     """ 
     Riemann_tensor(Christoffel_symbols, (x_1, ...)) = R[i, j, k, l] = R^i_jkl
     Compute the Riemann tensor from the Christoffel symbols 
-    R^α_βρσ = ∂ρ Γ^α_βσ − ∂σ Γ^α_βρ + Γ^α_κρ Γ^κ_ βσ − Γ^α_κσ Γ^κ_βρ
+    R^α_βρσ = ∂ρ Γ^α_βσ - ∂σ Γ^α_βρ + Γ^α_κρ Γ^κ_ βσ - Γ^α_κσ Γ^κ_βρ
     """
     dim = len(var)
     R = np.zeros([dim] * 4, dtype=Symbol)
@@ -227,7 +227,7 @@ def flat_spherical_3d():
 
     var = (r, t, p)
     J = Matrix([x1, x2, x3]).jacobian(var)
-    g = J.T * J
+    g = np.array(simplify(J.T *J))
 
     metric_analysis(g, var)
 
@@ -290,4 +290,5 @@ def kerr():
 
 if __name__ == "__main__":
     # reissner_norstroem()
-    kerr()
+    # kerr()
+    flat_spherical_3d()
