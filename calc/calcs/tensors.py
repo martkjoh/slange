@@ -118,6 +118,7 @@ def Christoffel(g, g_inv, var):
                             - diff(g[k, j], var[m])
                             + diff(g[m, j], var[k])
                         )
+                    C[i, j, k] = C[i, j, k].simplify()
     return C
 
 def Riemann_tensor(C, var):
