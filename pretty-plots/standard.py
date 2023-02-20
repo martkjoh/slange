@@ -15,11 +15,12 @@ def line_plot():
     x = np.linspace(-10, 10, 1000)
 
     fig, ax = plt.subplots()
-    ax.plot(x, x ** 2)
+    ax.plot(x, x ** 2, label="$f(x)$")
 
-    ax.set_xlabel("$x /  [x] = \mathrm{m \, s^{-1}}$")
+    ax.set_xlabel("$x /  [x] = \mathrm{m \cdot s^{-1}}$")
     ax.set_ylabel("$f(x) /  [f] = \mathrm{J}$")
 
+    plt.legend()
     plt.show()
 
 def histogram():
@@ -63,7 +64,11 @@ def animate_line():
         return l
 
     a = FA(fig, anim, blit=True, interval=10)
-    a.save("filename.mp4")
+    # a.save("filename.mp4")
+    plt.show()
 
 
 histogram2D()
+# line_plot()
+# animate_line()
+# surface_3D()
