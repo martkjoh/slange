@@ -62,8 +62,7 @@ def surface_anim():
     # anim()
     # mlab.show()
 
-
-
+    cmnd = path + name + "_%0" + str(len(str(N))) + "d" + ext
     input = ffmpeg.input(path + name + "_%0" + str(len(str(N))) + "d" + ext)
     output = path + name + ".mp4"
     stream = ffmpeg.output(input, output, framerate=20)
@@ -74,5 +73,6 @@ def surface_anim():
     [os.remove(path + f) for f in os.listdir(path) if f.endswith(ext) and f[:len(name)]==name]
 
 
-surface_plot()
-# surface_anim()
+
+# surface_plot()
+surface_anim()
